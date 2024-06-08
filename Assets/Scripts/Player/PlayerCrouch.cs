@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerCrouch : MonoBehaviour
@@ -10,7 +11,7 @@ public class PlayerCrouch : MonoBehaviour
     [SerializeField] private MeshRenderer standingPlayer;
     [SerializeField] private CapsuleCollider standingPlayerCollider;
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && SO_playerMovementSettings.State == PlayerState.Crouching)
         {
@@ -19,6 +20,20 @@ public class PlayerCrouch : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.S))
+        {
+            OnCrouchInput();
+        }
+    }*/
+
+    public void PlayerCrouched()
+    {
+        //I don't excatly know if you wanted to have crouch while jump or something else
+        if (SO_playerMovementSettings.State == PlayerState.Crouching)
+        {
+           StandUp();
+        }
+
+        else
         {
             OnCrouchInput();
         }

@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     {
         SO_playerMovementSettings.Initialize();
     }
-
+    /*
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.D))
@@ -29,6 +29,27 @@ public class PlayerMovement : MonoBehaviour
         {
             OnMoveInput(Vector2.right);
         }
+    }
+    */
+
+    public void MoveLeft()
+    {
+        OnMoveInput(Vector2.left);
+    }
+
+    public void CancelLeft() 
+    {
+        OnMoveInput(Vector2.right);
+    }
+
+    public void MoveRight()
+    {
+        OnMoveInput(Vector2.right);
+    }
+
+    public void CancelRight()
+    {
+        OnMoveInput(Vector2.left);
     }
 
     private void OnMoveInput(Vector2 MovementDirection)
