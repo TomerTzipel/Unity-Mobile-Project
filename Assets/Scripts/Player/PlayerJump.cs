@@ -6,7 +6,17 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private PlayerMovementSettings SO_playerMovementSettings;
     [SerializeField] private Rigidbody rb;
 
-    public void PlayerJumped()
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OnJumpInput();
+        }
+    }
+
+
+    public void OnJumpInput()
     {
         Jump();
     }

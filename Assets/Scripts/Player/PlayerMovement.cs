@@ -10,49 +10,49 @@ public class PlayerMovement : MonoBehaviour
     {
         SO_playerMovementSettings.Initialize();
     }
-    /*
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
-            OnMoveInput(Vector2.right);
+            ReadMoveInput(Vector2.right);
         }
         if (Input.GetKeyUp(KeyCode.D))
         {
-            OnMoveInput(Vector2.left); 
+            ReadMoveInput(Vector2.left); 
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            OnMoveInput(Vector2.left);
+            ReadMoveInput(Vector2.left);
         }
         if (Input.GetKeyUp(KeyCode.A))
         {
-            OnMoveInput(Vector2.right);
+            ReadMoveInput(Vector2.right);
         }
     }
-    */
+    
 
-    public void MoveLeft()
+    public void OnMoveLeftInput()
     {
-        OnMoveInput(Vector2.left);
+        ReadMoveInput(Vector2.left);
     }
 
-    public void CancelLeft() 
+    public void OnCancelMoveLeftInput() 
     {
-        OnMoveInput(Vector2.right);
+        ReadMoveInput(Vector2.right);
     }
 
-    public void MoveRight()
+    public void OnMoveRightInput()
     {
-        OnMoveInput(Vector2.right);
+        ReadMoveInput(Vector2.right);
     }
 
-    public void CancelRight()
+    public void OnCancelMoveRightInput()
     {
-        OnMoveInput(Vector2.left);
+        ReadMoveInput(Vector2.left);
     }
 
-    private void OnMoveInput(Vector2 MovementDirection)
+    private void ReadMoveInput(Vector2 MovementDirection)
     {
         SO_playerMovementSettings.MoveInputDetected = true;
         SO_playerMovementSettings.MovementDirection += MovementDirection;

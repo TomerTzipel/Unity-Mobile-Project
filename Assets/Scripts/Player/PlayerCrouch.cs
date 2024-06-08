@@ -11,7 +11,7 @@ public class PlayerCrouch : MonoBehaviour
     [SerializeField] private MeshRenderer standingPlayer;
     [SerializeField] private CapsuleCollider standingPlayerCollider;
 
-    /*private void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && SO_playerMovementSettings.State == PlayerState.Crouching)
         {
@@ -23,23 +23,18 @@ public class PlayerCrouch : MonoBehaviour
         {
             OnCrouchInput();
         }
-    }*/
+    }
 
-    public void PlayerCrouched()
+    public void OnJumpInput()
     {
-        //I don't excatly know if you wanted to have crouch while jump or something else
         if (SO_playerMovementSettings.State == PlayerState.Crouching)
         {
-           StandUp();
-        }
-
-        else
-        {
-            OnCrouchInput();
+            SO_playerMovementSettings.IsCrouchJumping = true;
+            StandUp();
         }
     }
 
-    private void OnCrouchInput()
+    public void OnCrouchInput()
     {
         if (SO_playerMovementSettings.State == PlayerState.Airborne) return;
 
@@ -52,7 +47,7 @@ public class PlayerCrouch : MonoBehaviour
         Crouch();
     }
 
-    public void StandUp()
+    private void StandUp()
     {
         SO_playerMovementSettings.State = PlayerState.Standing;
 
