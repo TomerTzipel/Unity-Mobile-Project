@@ -6,10 +6,10 @@ public class PlayerCrouch : MonoBehaviour
     [SerializeField] private PlayerMovementSettings SO_playerMovementSettings;
 
     [SerializeField] private MeshRenderer crouchingPlayer;
-    [SerializeField] private CapsuleCollider crouchingPlayerCollider;
+    [SerializeField] private Collider crouchingPlayerCollider;
 
     [SerializeField] private MeshRenderer standingPlayer;
-    [SerializeField] private CapsuleCollider standingPlayerCollider;
+    [SerializeField] private Collider standingPlayerCollider;
 
     private void Update()
     {

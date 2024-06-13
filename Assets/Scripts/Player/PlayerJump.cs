@@ -15,7 +15,6 @@ public class PlayerJump : MonoBehaviour
         }
     }
 
-
     public void OnJumpInput()
     {
         Jump();

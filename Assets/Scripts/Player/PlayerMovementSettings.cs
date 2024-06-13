@@ -29,15 +29,15 @@ public class PlayerMovementSettings : ScriptableObject
 
     public Vector3 Velocity
     {
-        get { return MovementDirection * speed; }
+        get { return speed * MovementDirection; }
     }
 
     public Vector3 JumpVelocity
     {
-        get { return Vector2.up * jumpForce; }
+        get { return jumpForce * Vector2.up; }
     }
     public Vector3 CrouchJumpVelocity
     {
-        get { return Vector2.up * crouchJumpForce; }
+        get { return crouchJumpForce * Vector2.up; }
     }
 }
