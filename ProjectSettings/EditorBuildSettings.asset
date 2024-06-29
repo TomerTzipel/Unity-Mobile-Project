@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Homework1Scene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Menu.unity
+    guid: 4a033341c4fd46448a4aa8e8fa666733
+  - enabled: 1
+    path: Assets/Scenes/TomerScene.unity
+    guid: 442a4d585ea80e14eb19d2f38fa9ba89
   m_configObjects: {}
