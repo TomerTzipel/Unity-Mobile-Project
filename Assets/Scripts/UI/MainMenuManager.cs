@@ -1,16 +1,19 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI controlModeUiText;
+    [SerializeField] TextMeshProUGUI difficultyButtonText;
+    [SerializeField] Button difficultyButton;
 
     private const string controlsModeDefault = "Touch";
     private const string difficultyModeDefault = "Easy";
 
     private string controlModeKey = "PlayerControlMode";
-    private string difficultyModeKey = "HardMode";
+    private string difficultyModeKey = "EasyMode";
 
     void Start()
     {
@@ -45,6 +48,15 @@ public class MainMenuManager : MonoBehaviour
         {
             controlModeUiText.text = "Buttons";
         }
+
+       if (PlayerPrefs.GetString(difficultyModeKey) == "Easy")
+        {
+            difficultyButtonText.text = "Easy";
+        }
+        else
+        {
+            difficultyButtonText.text = "HARD!";
+        }
     }
 
     public void ControlModePressed()
@@ -56,6 +68,22 @@ public class MainMenuManager : MonoBehaviour
         else
         {
             PlayerPrefs.SetString(controlModeKey, "Touch");
+        }
+
+        PlayerPrefs.Save();
+
+        UpdateUI();
+    }
+
+    public void DifficultyModePressed()
+    {
+        if (PlayerPrefs.GetString(difficultyModeKey) == "Easy")
+        {
+            PlayerPrefs.SetString(difficultyModeKey, "Hard");
+        }
+        else
+        {
+            PlayerPrefs.SetString(difficultyModeKey, "Easy");
         }
 
         PlayerPrefs.Save();
