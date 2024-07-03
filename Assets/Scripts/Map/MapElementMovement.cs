@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloorMovement : MonoBehaviour
+public class MapElementMovement : MonoBehaviour
 {
     [SerializeField] private MapSettings SO_MapSettings;
     [SerializeField] private Rigidbody rb;

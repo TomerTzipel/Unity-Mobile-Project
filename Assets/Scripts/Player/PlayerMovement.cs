@@ -15,23 +15,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
-            ReadMoveInput(Vector2.right);
+            OnMoveRightInput();
         }
         if (Input.GetKeyUp(KeyCode.D))
         {
-            ReadMoveInput(Vector2.left); 
+            OnCancelMoveRightInput();
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            ReadMoveInput(Vector2.left);
+            OnMoveLeftInput();
         }
         if (Input.GetKeyUp(KeyCode.A))
         {
-            ReadMoveInput(Vector2.right);
+            OnCancelMoveLeftInput();
         }
     }
     
-
     public void OnMoveLeftInput()
     {
         ReadMoveInput(Vector2.left);
