@@ -73,28 +73,28 @@ public class PlayerSlideMovement : MonoBehaviour
             if (swipeAngle < 0f + SwipeAngleThreshold && swipeAngle > 0f - SwipeAngleThreshold)
             {
                 Debug.Log("right");
-                //OnRightInput();
+                OnRightInput();
                 return;
             }
 
-            if (swipeAngle < -180f + SwipeAngleThreshold && swipeAngle > 180f - SwipeAngleThreshold)
+            if ((swipeAngle < -180f + SwipeAngleThreshold && swipeAngle > -180f) || swipeAngle > 180f - SwipeAngleThreshold && swipeAngle < 180f)
             {
                 Debug.Log("left");
-                //OnLeftInput();
+                OnLeftInput();
                 return;
             }
 
             if (swipeAngle < 90f + SwipeAngleThreshold && swipeAngle > 90f - SwipeAngleThreshold)
             {
                 Debug.Log("jump");
-                //OnJumpInput();
+                OnJumpInput();
                 return;
             }
 
             if (swipeAngle < -90f + SwipeAngleThreshold && swipeAngle > -90f - SwipeAngleThreshold)
             {
                 Debug.Log("crouch");
-                //OnCrouchInput();
+                OnCrouchInput();
                 return;
             }
         }
@@ -106,18 +106,28 @@ public class PlayerSlideMovement : MonoBehaviour
 
         playerMovement.OnMoveRightInput();
 
+        if (Direction.x == 0)
+        {
+            playerMovement.OnMoveRightInput();
+        }
+
     }
 
     private void OnLeftInput()
     {
         if (Direction.x < 0) return;
 
-        playerMovement.OnMoveLeftInput();
-
+        playerMovement.OnMoveLeftInput(); 
+        
+        if (Direction.x == 0)
+        {
+            playerMovement.OnMoveLeftInput();
+        }
     }
 
     private void OnJumpInput()
     {
+        playerCrouch.OnJumpInput();
         playerJump.OnJumpInput();
     }
 
