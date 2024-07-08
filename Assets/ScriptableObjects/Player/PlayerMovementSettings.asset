@@ -15,3 +15,6 @@ MonoBehaviour:
   speed: 8
   jumpForce: 7
   crouchJumpForce: 10
+  swipeMaxTime: 1.5
+  swipeMinDistance: 2
+  swipeAngleThreshold: 30

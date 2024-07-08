@@ -8,7 +8,6 @@ public class PlayerCollision : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            Debug.Log("Hit");
             //Hit player
         }
     }

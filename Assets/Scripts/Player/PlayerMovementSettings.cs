@@ -17,6 +17,9 @@ public class PlayerMovementSettings : ScriptableObject
     [SerializeField] private float jumpForce;
     [SerializeField] private float crouchJumpForce;
 
+    [SerializeField] private float swipeMaxTime;
+    [SerializeField] private float swipeMinDistance;
+    [SerializeField] private float swipeAngleThreshold;
     public bool IsCrouchJumping { get; set; }
 
     public void Initialize()
@@ -39,5 +42,18 @@ public class PlayerMovementSettings : ScriptableObject
     public Vector3 CrouchJumpVelocity
     {
         get { return crouchJumpForce * Vector2.up; }
+    }
+
+    public float SwipeMaxTime
+    {
+        get { return swipeMaxTime; }
+    }
+    public float SwipeMinDistance
+    {
+        get { return swipeMinDistance; }
+    }
+    public float SwipeAngleThreshold
+    {
+        get { return swipeAngleThreshold; }
     }
 }

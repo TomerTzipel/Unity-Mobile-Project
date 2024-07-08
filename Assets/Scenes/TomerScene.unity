@@ -4767,6 +4767,7 @@ GameObject:
   - component: {fileID: 1370261628}
   - component: {fileID: 1370261629}
   - component: {fileID: 1370261630}
+  - component: {fileID: 1370261632}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4988,6 +4989,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb18bbe04d8507f45ace870e584019c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1370261632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370261618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2724a89025cba4b4193529c81b399cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCrouch: {fileID: 1370261627}
+  playerJump: {fileID: 1370261626}
+  playerMovement: {fileID: 1370261624}
+  SO_MovementSettings: {fileID: 11400000, guid: 7373abb3ebb2e874c922bbf9e35b7864,
+    type: 2}
 --- !u!4 &1374439830 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3373704422526210304, guid: b41b37a1041fa8c40811cf70d4ac51e9,
