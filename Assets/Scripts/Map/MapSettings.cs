@@ -8,6 +8,9 @@ using UnityEngine;
 public class MapSettings : ScriptableObject
 {
     [SerializeField] private float tilesSpeed;
+
+    public float speedMultiplier { get; set; }
+
     public GameObject LastTile { get; set; }
 
     private float moveSpeedOffset
@@ -25,6 +28,6 @@ public class MapSettings : ScriptableObject
 
     public float TilesSpeed
     {
-        get { return tilesSpeed; }
+        get { return tilesSpeed * speedMultiplier; }
     }
 }

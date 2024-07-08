@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSlideMovement : MonoBehaviour
+public class PlayerSwipeMovement : MonoBehaviour
 {
     [SerializeField] private PlayerCrouch playerCrouch;
     [SerializeField] private PlayerJump playerJump;

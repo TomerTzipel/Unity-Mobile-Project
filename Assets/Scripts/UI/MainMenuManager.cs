@@ -12,19 +12,20 @@ public class MainMenuManager : MonoBehaviour
     private const string controlsModeDefault = "Touch";
     private const string difficultyModeDefault = "Easy";
 
-    private string controlModeKey = "PlayerControlMode";
-    private string difficultyModeKey = "EasyMode";
+    public const string controlModeKey = "PlayerControlMode";
+    public const string difficultyModeKey = "EasyMode";
 
     void Start()
     {
         CheckPlayerData();
         UpdateUI();
+
+        Debug.Log(PlayerPrefs.GetString(controlModeKey)); 
+        Debug.Log(PlayerPrefs.GetString(difficultyModeKey));
     }
 
     void CheckPlayerData()
     {
-        
-
         if (!PlayerPrefs.HasKey(controlModeKey))
         {
             PlayerPrefs.SetString(controlModeKey, controlsModeDefault);
@@ -95,4 +96,6 @@ public class MainMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    
 }

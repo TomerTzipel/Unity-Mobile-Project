@@ -21,11 +21,36 @@ public class GameManager : MonoBehaviour
 
     private ObjectPool<GameObject> _obstaclesPool;
 
+    [SerializeField] private GameObject buttonsCanvas;
+    [SerializeField] private PlayerSwipeMovement playerSwipe;
     private void Awake()
     {
         SO_MapSettings.LastTile = firstLastTile;
 
         _obstaclesPool = new ObjectPool<GameObject>(PoolCreateObstacle, OnPoolTakeObstacle, OnPoolReturnObstacle, OnPoolDestroybstacle,true,80,160);
+
+        CheckSettings();
+    }
+
+    private void CheckSettings()
+    {
+        if (PlayerPrefs.GetString(MainMenuManager.controlModeKey) == "Touch")
+        {
+            buttonsCanvas.SetActive(false);
+        }
+        else
+        {
+            playerSwipe.enabled = false;
+        }
+
+        if (PlayerPrefs.GetString(MainMenuManager.difficultyModeKey) == "Easy")
+        {
+            SO_MapSettings.speedMultiplier = 1f;
+        }
+        else
+        {
+            SO_MapSettings.speedMultiplier = 1.5f;
+        }
     }
 
     private GameObject PoolCreateObstacle()
