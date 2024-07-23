@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ObstacleRemover : MonoBehaviour
 {
-    [SerializeField] private GameManager gameManager;
+    [SerializeField] private ObstaclesManager obstaclesManager;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Obstacle"))
         {
-            gameManager.ReturnObstacleToPool(other.gameObject);
+            obstaclesManager.ReturnObstacleToPool(other.gameObject);
         }
     }
 }

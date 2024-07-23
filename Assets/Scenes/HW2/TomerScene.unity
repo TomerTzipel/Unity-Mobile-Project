@@ -1838,7 +1838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00918d29f51bdab4297f2eb74e1b54aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 1366731792}
+  obstaclesManager: {fileID: 0}
 --- !u!65 &486684104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3547,7 +3547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SO_MapSettings: {fileID: 11400000, guid: 5ceeefb8494189c408d50d78830977b1, type: 2}
-  gameManager: {fileID: 1366731792}
+  obstaclesManager: {fileID: 0}
 --- !u!1001 &848433369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4234,6 +4234,7 @@ RectTransform:
   m_Children:
   - {fileID: 1353174985}
   - {fileID: 1382521161}
+  - {fileID: 2094479062}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5414,8 +5415,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1366731791}
   - component: {fileID: 1366731792}
+  - component: {fileID: 1366731793}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5450,13 +5452,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SO_MapSettings: {fileID: 11400000, guid: 5ceeefb8494189c408d50d78830977b1, type: 2}
   firstLastTile: {fileID: 567151129}
-  obstaclePrefab: {fileID: 4558122086254609718, guid: b41b37a1041fa8c40811cf70d4ac51e9,
-    type: 3}
-  obstacleSpawnRate: 4
-  obstacleHeight: 4
-  obstacleThickness: 2
   buttonsCanvas: {fileID: 1055313796}
   playerSwipe: {fileID: 1370261632}
+--- !u!114 &1366731793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366731790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4df187af794b3499d61236b7b92075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1366731792}
+  obstaclePrefab: {fileID: 4558122086254609718, guid: b41b37a1041fa8c40811cf70d4ac51e9,
+    type: 3}
+  obstacleSpawnRate: 5
+  obstacleHeight: 0
+  obstacleThickness: 0
 --- !u!1 &1370261618
 GameObject:
   m_ObjectHideFlags: 0
@@ -8040,12 +8055,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094479059}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -400, y: -184.61539, z: 0}
+  m_LocalScale: {x: 0.34188035, y: 0.34188035, z: 0.34188035}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1055313800}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2106964137 stripped
 Transform:
@@ -8415,5 +8430,4 @@ SceneRoots:
   - {fileID: 1370261622}
   - {fileID: 1959019330}
   - {fileID: 1055313800}
-  - {fileID: 2094479062}
   - {fileID: 1366731791}
