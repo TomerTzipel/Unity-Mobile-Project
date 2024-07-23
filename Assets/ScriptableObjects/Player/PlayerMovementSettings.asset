@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerMovementSettings
   m_EditorClassIdentifier: 
   speed: 8
-  jumpForce: 7
-  crouchJumpForce: 10
+  jumpForce: 10
+  crouchJumpForce: 13
   swipeMaxTime: 1.5
   swipeMinDistance: 2
   swipeAngleThreshold: 30

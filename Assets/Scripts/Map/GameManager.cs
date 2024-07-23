@@ -1,10 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
-
-
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private MapSettings SO_MapSettings;
@@ -12,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject buttonsCanvas;
     [SerializeField] private PlayerSwipeMovement playerSwipe;
+
+    [SerializeField] private ScoreManager ScoreManager;
 
     public GameObject FirstLastTile
     {
@@ -28,7 +26,12 @@ public class GameManager : MonoBehaviour
 
         CheckSettings();
     }
-  
+
+    private void Start()
+    {
+        ScoreManager.StartTimer();
+    }
+
     private void CheckSettings()
     {
         if (PlayerPrefs.GetString(MainMenuManager.controlModeKey) == "Touch")
