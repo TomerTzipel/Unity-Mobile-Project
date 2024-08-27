@@ -5,15 +5,19 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI controlModeUiText;
-    [SerializeField] TextMeshProUGUI difficultyButtonText;
+    [SerializeField] Button controlModeButton;
     [SerializeField] Button difficultyButton;
+
+    [SerializeField] Sprite offMode;
+    [SerializeField] Sprite onMode;
 
     private const string controlsModeDefault = "Touch";
     private const string difficultyModeDefault = "Easy";
+    private const int PlayerBestScore = 0;
 
     public const string controlModeKey = "PlayerControlMode";
     public const string difficultyModeKey = "EasyMode";
+    public const string PlayerBestScoreKey = "PlayerBestScore";
 
     void Start()
     {
@@ -30,6 +34,8 @@ public class MainMenuManager : MonoBehaviour
         {
             PlayerPrefs.SetString(controlModeKey, controlsModeDefault);
             PlayerPrefs.SetString(difficultyModeKey, difficultyModeDefault);
+            PlayerPrefs.SetInt(PlayerBestScoreKey, PlayerBestScore);
+
             PlayerPrefs.Save();
             Debug.Log("No existing PlayerPrefs for Controls. Initialized with default value.");
         }
@@ -43,20 +49,20 @@ public class MainMenuManager : MonoBehaviour
     {
        if (PlayerPrefs.GetString(controlModeKey) == "Touch")
         {
-            controlModeUiText.text = "Touch";
+            controlModeButton.image.sprite = onMode;
         }
        else
         {
-            controlModeUiText.text = "Buttons";
+            controlModeButton.image.sprite = offMode;
         }
 
        if (PlayerPrefs.GetString(difficultyModeKey) == "Easy")
         {
-            difficultyButtonText.text = "Easy";
+            difficultyButton.image.sprite = offMode;
         }
-        else
+       else
         {
-            difficultyButtonText.text = "HARD!";
+            difficultyButton.image.sprite = onMode;
         }
     }
 
@@ -92,10 +98,13 @@ public class MainMenuManager : MonoBehaviour
         UpdateUI();
     }
 
-    public void StartGame(string sceneName)
+    public void StartGame()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("GameScene");
     }
 
-    
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
