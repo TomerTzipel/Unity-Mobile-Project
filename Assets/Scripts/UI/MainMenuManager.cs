@@ -11,6 +11,10 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] Sprite offMode;
     [SerializeField] Sprite onMode;
 
+    [SerializeField] AudioSource sfxClick;
+    [SerializeField] AudioSource sfxSuccess;
+    [SerializeField] AudioSource sfxFailure;
+
     private const string controlsModeDefault = "Touch";
     private const string difficultyModeDefault = "Easy";
     private const int PlayerBestScore = 0;
@@ -98,9 +102,33 @@ public class MainMenuManager : MonoBehaviour
         UpdateUI();
     }
 
-    public void StartGame()
+    public void StartGame(GameObject buttonPressed)
     {
-        SceneManager.LoadScene("GameScene");
+        string levelName = buttonPressed.name;
+
+
+        if (LevelData.levelThresholds.ContainsKey(levelName))
+        {
+            int levelScoreThreshold = LevelData.levelThresholds[levelName];
+
+            if (PlayerPrefs.GetInt("PlayerBestScore") >= levelScoreThreshold)
+            {
+                StaticData.checkPointScoreValueToKeep = levelScoreThreshold;
+                
+                SceneManager.LoadScene("GameScene");
+
+                sfxSuccess.Play();
+            }
+
+            else 
+            { 
+                sfxFailure.Play(); 
+            }
+        }
+        else
+        {
+            sfxFailure.Play();
+        }
     }
 
     public void QuitGame()
