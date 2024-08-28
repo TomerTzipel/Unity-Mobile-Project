@@ -2,6 +2,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] AudioSource sfxClick;
     [SerializeField] AudioSource sfxSuccess;
     [SerializeField] AudioSource sfxFailure;
+
+    [SerializeField] Image TransitionUi;
+
+    public float sceneLoadTime;
 
     private const string controlsModeDefault = "Touch";
     private const string difficultyModeDefault = "Easy";
@@ -114,8 +119,10 @@ public class MainMenuManager : MonoBehaviour
             if (PlayerPrefs.GetInt("PlayerBestScore") >= levelScoreThreshold)
             {
                 StaticData.checkPointScoreValueToKeep = levelScoreThreshold;
-                
-                SceneManager.LoadScene("GameScene");
+
+                TransitionUi.GetComponent<TransitionUI>().TransitionStart();
+
+                StartCoroutine(LoadSceneAfterDelay("GameScene", sceneLoadTime));
 
                 sfxSuccess.Play();
             }
@@ -134,5 +141,14 @@ public class MainMenuManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private IEnumerator LoadSceneAfterDelay(string sceneName, float delay)
+    {
+        
+        yield return new WaitForSeconds(delay);
+
+        
+        SceneManager.LoadScene(sceneName);
     }
 }
