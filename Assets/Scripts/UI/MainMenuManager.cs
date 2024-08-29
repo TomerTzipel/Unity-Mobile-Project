@@ -20,56 +20,28 @@ public class MainMenuManager : MonoBehaviour
 
     public float sceneLoadTime;
 
-    private const string controlsModeDefault = "Touch";
-    private const string difficultyModeDefault = "Easy";
-    private const int PlayerBestScore = 0;
-
-    public const string controlModeKey = "PlayerControlMode";
-    public const string difficultyModeKey = "EasyMode";
-    public const string PlayerBestScoreKey = "PlayerBestScore";
-
     void Start()
     {
-        CheckPlayerData();
+        PlayerPrefsManager.InitializePlayerPrefs();
         UpdateUI();
-
-        Debug.Log(PlayerPrefs.GetString(controlModeKey)); 
-        Debug.Log(PlayerPrefs.GetString(difficultyModeKey));
-    }
-
-    void CheckPlayerData()
-    {
-        if (!PlayerPrefs.HasKey(controlModeKey))
-        {
-            PlayerPrefs.SetString(controlModeKey, controlsModeDefault);
-            PlayerPrefs.SetString(difficultyModeKey, difficultyModeDefault);
-            PlayerPrefs.SetInt(PlayerBestScoreKey, PlayerBestScore);
-
-            PlayerPrefs.Save();
-            Debug.Log("No existing PlayerPrefs for Controls. Initialized with default value.");
-        }
-        else
-        {
-            Debug.Log("PlayerPrefs for player Controls exists. Loaded existing value.");
-        }
     }
 
     void UpdateUI()
     {
-       if (PlayerPrefs.GetString(controlModeKey) == "Touch")
+        if (PlayerPrefsManager.GetControlMode() == "Touch")
         {
             controlModeButton.image.sprite = onMode;
         }
-       else
+        else
         {
             controlModeButton.image.sprite = offMode;
         }
 
-       if (PlayerPrefs.GetString(difficultyModeKey) == "Easy")
+        if (PlayerPrefsManager.GetDifficultyMode() == "Easy")
         {
             difficultyButton.image.sprite = offMode;
         }
-       else
+        else
         {
             difficultyButton.image.sprite = onMode;
         }
@@ -77,32 +49,28 @@ public class MainMenuManager : MonoBehaviour
 
     public void ControlModePressed()
     {
-        if (PlayerPrefs.GetString(controlModeKey) == "Touch")
+        if (PlayerPrefsManager.GetControlMode() == "Touch")
         {
-            PlayerPrefs.SetString(controlModeKey, "Buttons");
+            PlayerPrefsManager.SetControlMode("Buttons");
         }
         else
         {
-            PlayerPrefs.SetString(controlModeKey, "Touch");
+            PlayerPrefsManager.SetControlMode("Touch");
         }
-
-        PlayerPrefs.Save();
 
         UpdateUI();
     }
 
     public void DifficultyModePressed()
     {
-        if (PlayerPrefs.GetString(difficultyModeKey) == "Easy")
+        if (PlayerPrefsManager.GetDifficultyMode() == "Easy")
         {
-            PlayerPrefs.SetString(difficultyModeKey, "Hard");
+            PlayerPrefsManager.SetDifficultyMode("Hard");
         }
         else
         {
-            PlayerPrefs.SetString(difficultyModeKey, "Easy");
+            PlayerPrefsManager.SetDifficultyMode("Easy");
         }
-
-        PlayerPrefs.Save();
 
         UpdateUI();
     }
@@ -111,12 +79,11 @@ public class MainMenuManager : MonoBehaviour
     {
         string levelName = buttonPressed.name;
 
-
         if (LevelData.levelThresholds.ContainsKey(levelName))
         {
             int levelScoreThreshold = LevelData.levelThresholds[levelName];
 
-            if (PlayerPrefs.GetInt("PlayerBestScore") >= levelScoreThreshold)
+            if (PlayerPrefsManager.GetPlayerBestScore() >= levelScoreThreshold)
             {
                 StaticData.checkPointScoreValueToKeep = levelScoreThreshold;
 
@@ -126,10 +93,9 @@ public class MainMenuManager : MonoBehaviour
 
                 sfxSuccess.Play();
             }
-
-            else 
-            { 
-                sfxFailure.Play(); 
+            else
+            {
+                sfxFailure.Play();
             }
         }
         else
@@ -145,10 +111,7 @@ public class MainMenuManager : MonoBehaviour
 
     private IEnumerator LoadSceneAfterDelay(string sceneName, float delay)
     {
-        
         yield return new WaitForSeconds(delay);
-
-        
         SceneManager.LoadScene(sceneName);
     }
 }

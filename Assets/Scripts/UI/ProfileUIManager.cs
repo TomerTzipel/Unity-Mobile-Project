@@ -59,7 +59,7 @@ public class ProfileUIManager : MonoBehaviour
             Debug.Log("No profile found.");
         }
     }
-
+    
     public void OnUploadButtonClicked()
     {
         NativeCamera.Permission permission = NativeCamera.TakePicture((path) =>
@@ -87,5 +87,5 @@ public class ProfileUIManager : MonoBehaviour
         {
             Debug.Log("Asking for camera permission.");
         }
-    }
+    } 
 }
