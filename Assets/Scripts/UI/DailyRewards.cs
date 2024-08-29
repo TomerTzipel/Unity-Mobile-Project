@@ -11,15 +11,10 @@ public class DailyRewards : MonoBehaviour
     [SerializeField] Sprite claimedIcon;         
     [SerializeField] Sprite unAvailable;         
     [SerializeField] Sprite claimed;
-
     [SerializeField] AudioSource awardCoinsSound;
 
     void Start()
     {
-        PlayerPrefsManager.WipeAllPlayerPrefs();
-        PlayerPrefsManager.SetCurrentDay(5);
-        PlayerPrefsManager.SetLastLoginTime(DateTime.Now.AddDays(-5));
-
         CheckDailyReward();
         UpdateRewardUI();
     }
@@ -46,28 +41,30 @@ public class DailyRewards : MonoBehaviour
         for (int i = 0; i < rewardButtons.Count; i++)
         {
             Image canClaimImage = rewardButtons[i].transform.Find("CanClaim").GetComponent<Image>();
+            Image AnimatedNotification = rewardButtons[i].transform.Find("CanClaimAnimated").GetComponent<Image>();
 
             if (i < currentDay)
             {
                 if (PlayerPrefsManager.GetClaimedStatus(i + 1))
                 {
-                    
+                    canClaimImage.gameObject.SetActive(true);
+                    AnimatedNotification.gameObject.SetActive(false);
                     rewardButtons[i].image.sprite = claimed;
                     canClaimImage.sprite = claimedIcon;
                 }
                 else
                 {
-                    
                     rewardButtons[i].image.sprite = claimed;
                     canClaimImage.sprite = canClaimIcon;
-                    canClaimImage.gameObject.SetActive(true);
+                    canClaimImage.gameObject.SetActive(false);
+                    AnimatedNotification.gameObject.SetActive(true);
                 }
             }
             else
             {
-                
                 rewardButtons[i].image.sprite = unAvailable;
                 canClaimImage.gameObject.SetActive(false);
+                AnimatedNotification.gameObject.SetActive(false);
             }
         }
     }
