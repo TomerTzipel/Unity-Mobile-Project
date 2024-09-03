@@ -94,7 +94,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        //SceneManager.LoadScene(sceneName);
     }
 
     
