@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     private void CheckSettings()
     {
-        if (PlayerPrefs.GetString(MainMenuManager.controlModeKey) == "Touch")
+        if (PlayerPrefs.GetString(PlayerPrefsManager.GetControlMode()) == "Touch")
         {
             buttonsCanvas.SetActive(false);
         }
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
             playerSwipe.enabled = false;
         }
 
-        if (PlayerPrefs.GetString(MainMenuManager.difficultyModeKey) == "Easy")
+        if (PlayerPrefs.GetString(PlayerPrefsManager.GetDifficultyMode()) == "Easy")
         {
             SO_MapSettings.speedMultiplier = 1f;
         }

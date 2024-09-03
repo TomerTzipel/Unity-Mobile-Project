@@ -2,100 +2,116 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI controlModeUiText;
-    [SerializeField] TextMeshProUGUI difficultyButtonText;
+    [SerializeField] Button controlModeButton;
     [SerializeField] Button difficultyButton;
 
-    private const string controlsModeDefault = "Touch";
-    private const string difficultyModeDefault = "Easy";
+    [SerializeField] Sprite offMode;
+    [SerializeField] Sprite onMode;
 
-    public const string controlModeKey = "PlayerControlMode";
-    public const string difficultyModeKey = "EasyMode";
+    [SerializeField] AudioSource sfxClick;
+    [SerializeField] AudioSource sfxSuccess;
+    [SerializeField] AudioSource sfxFailure;
+
+    [SerializeField] Image TransitionUi;
+
+    public float sceneLoadTime;
 
     void Start()
     {
-        CheckPlayerData();
+        PlayerPrefsManager.InitializePlayerPrefs();
         UpdateUI();
-
-        Debug.Log(PlayerPrefs.GetString(controlModeKey)); 
-        Debug.Log(PlayerPrefs.GetString(difficultyModeKey));
-    }
-
-    void CheckPlayerData()
-    {
-        if (!PlayerPrefs.HasKey(controlModeKey))
-        {
-            PlayerPrefs.SetString(controlModeKey, controlsModeDefault);
-            PlayerPrefs.SetString(difficultyModeKey, difficultyModeDefault);
-            PlayerPrefs.Save();
-            Debug.Log("No existing PlayerPrefs for Controls. Initialized with default value.");
-        }
-        else
-        {
-            Debug.Log("PlayerPrefs for player Controls exists. Loaded existing value.");
-        }
     }
 
     void UpdateUI()
     {
-       if (PlayerPrefs.GetString(controlModeKey) == "Touch")
+        if (PlayerPrefsManager.GetControlMode() == "Touch")
         {
-            controlModeUiText.text = "Touch";
-        }
-       else
-        {
-            controlModeUiText.text = "Buttons";
-        }
-
-       if (PlayerPrefs.GetString(difficultyModeKey) == "Easy")
-        {
-            difficultyButtonText.text = "Easy";
+            controlModeButton.image.sprite = onMode;
         }
         else
         {
-            difficultyButtonText.text = "HARD!";
+            controlModeButton.image.sprite = offMode;
+        }
+
+        if (PlayerPrefsManager.GetDifficultyMode() == "Easy")
+        {
+            difficultyButton.image.sprite = offMode;
+        }
+        else
+        {
+            difficultyButton.image.sprite = onMode;
         }
     }
 
     public void ControlModePressed()
     {
-        if (PlayerPrefs.GetString(controlModeKey) == "Touch")
+        if (PlayerPrefsManager.GetControlMode() == "Touch")
         {
-            PlayerPrefs.SetString(controlModeKey, "Buttons");
+            PlayerPrefsManager.SetControlMode("Buttons");
         }
         else
         {
-            PlayerPrefs.SetString(controlModeKey, "Touch");
+            PlayerPrefsManager.SetControlMode("Touch");
         }
-
-        PlayerPrefs.Save();
 
         UpdateUI();
     }
 
     public void DifficultyModePressed()
     {
-        if (PlayerPrefs.GetString(difficultyModeKey) == "Easy")
+        if (PlayerPrefsManager.GetDifficultyMode() == "Easy")
         {
-            PlayerPrefs.SetString(difficultyModeKey, "Hard");
+            PlayerPrefsManager.SetDifficultyMode("Hard");
         }
         else
         {
-            PlayerPrefs.SetString(difficultyModeKey, "Easy");
+            PlayerPrefsManager.SetDifficultyMode("Easy");
         }
-
-        PlayerPrefs.Save();
 
         UpdateUI();
     }
 
-    public void StartGame(string sceneName)
+    public void StartGame(GameObject buttonPressed)
     {
-        //SceneManager.LoadScene(sceneName);
+        string levelName = buttonPressed.name;
+
+        if (LevelData.levelThresholds.ContainsKey(levelName))
+        {
+            int levelScoreThreshold = LevelData.levelThresholds[levelName];
+
+            if (PlayerPrefsManager.GetPlayerBestScore() >= levelScoreThreshold)
+            {
+                StaticData.checkPointScoreValueToKeep = levelScoreThreshold;
+
+                TransitionUi.GetComponent<TransitionUI>().TransitionStart();
+
+                StartCoroutine(LoadSceneAfterDelay("GameScene", sceneLoadTime));
+
+                sfxSuccess.Play();
+            }
+            else
+            {
+                sfxFailure.Play();
+            }
+        }
+        else
+        {
+            sfxFailure.Play();
+        }
     }
 
-    
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    private IEnumerator LoadSceneAfterDelay(string sceneName, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneName);
+    }
 }
