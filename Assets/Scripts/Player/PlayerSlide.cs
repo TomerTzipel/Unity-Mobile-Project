@@ -1,7 +1,8 @@
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 
-public class PlayerCrouch : MonoBehaviour
+public class PlayerSlide : MonoBehaviour
 {
     [SerializeField] private PlayerMovementSettings SO_playerMovementSettings;
 
@@ -11,40 +12,42 @@ public class PlayerCrouch : MonoBehaviour
     [SerializeField] private MeshRenderer standingPlayer;
     [SerializeField] private Collider standingPlayerCollider;
 
+    [SerializeField] private float slideDuration;
+
+    private Coroutine slideDurationCoroutine;
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && SO_playerMovementSettings.State == PlayerState.Crouching)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            SO_playerMovementSettings.IsCrouchJumping = true;
-            StandUp();
+            OnJumpInput();
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            OnCrouchInput();
+            OnSlideInput();
         }
     }
 
     public void OnJumpInput()
     {
-        if (SO_playerMovementSettings.State == PlayerState.Crouching)
+        Debug.Log($"From Slide:{SO_playerMovementSettings.State}");
+        if (SO_playerMovementSettings.State == PlayerState.Sliding)
         {
-            SO_playerMovementSettings.IsCrouchJumping = true;
+            //Slide Jump
+            SO_playerMovementSettings.IsSlideJumping = true;
+            StopAllCoroutines();
             StandUp();
         }
     }
 
-    public void OnCrouchInput()
+    public void OnSlideInput()
     {
         if (SO_playerMovementSettings.State == PlayerState.Airborne) return;
 
-        if (SO_playerMovementSettings.State == PlayerState.Crouching)
-        {
-            StandUp();
-            return;
-        }
-
-        Crouch();
+        if (SO_playerMovementSettings.State == PlayerState.Sliding) return;
+ 
+        Slide();
     }
 
     private void StandUp()
@@ -57,13 +60,20 @@ public class PlayerCrouch : MonoBehaviour
         standingPlayerCollider.enabled = true;
     }
 
-    private void Crouch()
+    private void Slide()
     {
-        SO_playerMovementSettings.State = PlayerState.Crouching;
+        SO_playerMovementSettings.State = PlayerState.Sliding;
 
         crouchingPlayer.enabled = true;
         crouchingPlayerCollider.enabled = true;
         standingPlayer.enabled = false;
         standingPlayerCollider.enabled = false;
+        StartCoroutine(SlideDuration());
+    }
+
+    private IEnumerator SlideDuration()
+    {
+        yield return new WaitForSeconds(slideDuration);
+        StandUp();
     }
 }

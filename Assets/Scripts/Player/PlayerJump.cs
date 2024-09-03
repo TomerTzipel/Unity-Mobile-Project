@@ -26,10 +26,10 @@ public class PlayerJump : MonoBehaviour
 
         Vector3 JumpVelocity = SO_playerMovementSettings.JumpVelocity;
 
-        if (SO_playerMovementSettings.IsCrouchJumping)
+        if (SO_playerMovementSettings.IsSlideJumping)
         {
             JumpVelocity = SO_playerMovementSettings.CrouchJumpVelocity;
-            SO_playerMovementSettings.IsCrouchJumping = false;
+            SO_playerMovementSettings.IsSlideJumping = false;
         }
 
         rb.AddForce(JumpVelocity, ForceMode.VelocityChange);

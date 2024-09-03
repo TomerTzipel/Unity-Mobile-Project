@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSwipeMovement : MonoBehaviour
 {
-    [SerializeField] private PlayerCrouch playerCrouch;
+    [SerializeField] private PlayerSlide playerSlide;
     [SerializeField] private PlayerJump playerJump;
     [SerializeField] private PlayerMovement playerMovement;
 
@@ -127,13 +127,13 @@ public class PlayerSwipeMovement : MonoBehaviour
 
     private void OnJumpInput()
     {
-        playerCrouch.OnJumpInput();
+        playerSlide.OnJumpInput();
         playerJump.OnJumpInput();
     }
 
     private void OnCrouchInput()
     {
-        playerCrouch.OnCrouchInput();
+        playerSlide.OnSlideInput();
     }
 
 

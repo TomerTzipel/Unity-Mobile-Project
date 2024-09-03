@@ -2,7 +2,7 @@ using UnityEngine;
 
 public enum PlayerState
 {
-    Standing, Airborne, Crouching
+    Standing, Airborne, Sliding
 }
 
 [CreateAssetMenu(fileName = "PlayerMovementSettings", menuName = "ScriptableObjects/Player/MovementSettings")]
@@ -20,14 +20,14 @@ public class PlayerMovementSettings : ScriptableObject
     [SerializeField] private float swipeMaxTime;
     [SerializeField] private float swipeMinDistance;
     [SerializeField] private float swipeAngleThreshold;
-    public bool IsCrouchJumping { get; set; }
+    public bool IsSlideJumping { get; set; }
 
     public void Initialize()
     {
         State = PlayerState.Standing;
         MovementDirection = Vector2.zero;
         MoveInputDetected = false;
-        IsCrouchJumping = false;
+        IsSlideJumping = false;
     }
 
     public Vector3 Velocity

@@ -6,11 +6,11 @@ using UnityEngine;
 public class Lerp : MonoBehaviour
 {
 
-    private float elapsedTime = 0f;
+    //private float elapsedTime = 0f;
     private float duration = 5f;
     private Vector3 startScale = Vector3.one;
     private Vector3 targetScale = new Vector3(5f, 5f, 5f);
-    bool isGrowing = true;
+    //bool isGrowing = true;
 
 
     // Start is called before the first frame update

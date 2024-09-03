@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.3537736, g: 1, b: 0.9659406, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
@@ -3334,8 +3334,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1370261627}
-          m_TargetAssemblyTypeName: PlayerCrouch, Assembly-CSharp
-          m_MethodName: OnCrouchInput
+          m_TargetAssemblyTypeName: PlayerSlide, Assembly-CSharp
+          m_MethodName: OnSlideInput
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4129,8 +4129,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1370261627}
-          m_TargetAssemblyTypeName: PlayerCrouch, Assembly-CSharp
-          m_MethodName: OnCrouchInput
+          m_TargetAssemblyTypeName: PlayerSlide, Assembly-CSharp
+          m_MethodName: OnSlideInput
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -8336,7 +8336,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1370261618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 884010dab43e6dc4caeee664dded3573, type: 3}
+  m_Script: {fileID: 11500000, guid: aba62a6fdc981ae499dc657f844a8eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SO_playerMovementSettings: {fileID: 11400000, guid: 7373abb3ebb2e874c922bbf9e35b7864,
@@ -8345,6 +8345,7 @@ MonoBehaviour:
   crouchingPlayerCollider: {fileID: 1370261630}
   standingPlayer: {fileID: 1370261620}
   standingPlayerCollider: {fileID: 1370261629}
+  slideDuration: 1
 --- !u!114 &1370261628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8429,7 +8430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2724a89025cba4b4193529c81b399cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCrouch: {fileID: 1370261627}
+  playerSlide: {fileID: 1370261627}
   playerJump: {fileID: 1370261626}
   playerMovement: {fileID: 1370261624}
   SO_MovementSettings: {fileID: 11400000, guid: 7373abb3ebb2e874c922bbf9e35b7864,
@@ -8513,7 +8514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1382521159
 MonoBehaviour:
   m_ObjectHideFlags: 0
