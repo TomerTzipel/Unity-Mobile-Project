@@ -43,8 +43,6 @@ public class ObstaclesManager : MonoBehaviour
         {
             _obstaclesPool.Release(objects[i]);
         }
-
-        Debug.Log(_obstaclesPool.CountAll);
     }
 
     private GameObject PoolCreateObstacle()

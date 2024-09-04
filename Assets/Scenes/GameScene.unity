@@ -8418,6 +8418,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 1366731794}
+  powerUpSettings: {fileID: 0}
+  MaxHp: 0
+  healValue: 0
+  invulnerabilityDuration: 0
 --- !u!114 &1370261632
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,14 +15,15 @@ public class MapSettings : ScriptableObject
 
     private float moveSpeedOffset
     {
-        get { return tilesSpeed / 50f; }
+        get { return TilesSpeed / 50f; }
     }
 
     public Vector3 RespawnPoint
     {
         get 
         {
-            return new Vector3(LastTile.transform.position.x, LastTile.transform.position.y, LastTile.transform.position.z + LastTile.transform.localScale.z - moveSpeedOffset); 
+            float z = LastTile.transform.position.z + LastTile.transform.localScale.z - moveSpeedOffset;
+            return new Vector3(LastTile.transform.position.x, LastTile.transform.position.y, z); 
         }
     }
 
