@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public enum ObstacleType
-{
-    Open, FullyBlocked, JumpOnly, CrouchOnly, CrouchJumpOnly, NotJump, NotCrouch
-}
+
 
 public class ObstaclesManager : MonoBehaviour
 {
@@ -32,7 +29,7 @@ public class ObstaclesManager : MonoBehaviour
 
     private void WarmUpPool()
     {
-        List<GameObject> objects = new List<GameObject>(20);
+        List<GameObject> objects = new(20);
 
         for (int i = 0; i < 20; i++)
         {
@@ -75,14 +72,13 @@ public class ObstaclesManager : MonoBehaviour
         _obstacleSpawnCounter++;
         if (_obstacleSpawnCounter == obstacleSpawnRate)
         {
+            _obstacleSpawnCounter = 0;
             SpawnObstacles();
         }
     }
 
-    public void SpawnObstacles()
+    private void SpawnObstacles()
     {
-        _obstacleSpawnCounter = 0;
-
         float obstacleZ = LastTile.transform.position.z;
 
         float lastTileX = LastTile.transform.position.x;
@@ -93,7 +89,8 @@ public class ObstaclesManager : MonoBehaviour
         float rightObstacleX = lastTileX + lastTileWidth / 3;
         float leftObstacleX = lastTileX - lastTileWidth / 3;
 
-        List<ObstacleType> types = new List<ObstacleType>() { ObstacleType.Open, ObstacleType.FullyBlocked, ObstacleType.JumpOnly, ObstacleType.CrouchOnly, ObstacleType.CrouchJumpOnly, ObstacleType.NotJump, ObstacleType.NotCrouch };
+
+        List<ObstacleType> types = new() { ObstacleType.Open, ObstacleType.FullyBlocked, ObstacleType.JumpOnly, ObstacleType.SlideOnly, ObstacleType.SlideJumpOnly, ObstacleType.NotJump, ObstacleType.AnyJump };
 
         ObstacleType middleObstacleType = ChooseObstacleType(types);
         ObstacleType rightObstacleType = ChooseObstacleType(types);
@@ -123,16 +120,16 @@ public class ObstaclesManager : MonoBehaviour
             case ObstacleType.JumpOnly:
                 SpawnJumpOnlyObstacle(x, surfaceY, z);
                 break;
-            case ObstacleType.CrouchOnly:
+            case ObstacleType.SlideOnly:
                 SpawnCrouchOnlyObstacle(x, surfaceY, z);
                 break;
-            case ObstacleType.CrouchJumpOnly:
+            case ObstacleType.SlideJumpOnly:
                 SpawnCrouchJumpOnlyObstacle(x, surfaceY, z);
                 break;
             case ObstacleType.NotJump:
                 SpawnNotJumpObstacle(x, surfaceY, z);
                 break;
-            case ObstacleType.NotCrouch:
+            case ObstacleType.AnyJump:
                 SpawnNotCrouchObstacle(x, surfaceY, z);
                 break;
         }
@@ -151,13 +148,13 @@ public class ObstaclesManager : MonoBehaviour
         obstacleMiddle.transform.position = new Vector3(x, surfaceY + (heightHalf * 3), z);
         obstacleUpper.transform.position = new Vector3(x, surfaceY + (heightHalf * 5), z);
 
-        obstacleLower.gameObject.transform.parent = LastTile.transform;
-        obstacleMiddle.gameObject.transform.parent = LastTile.transform;
-        obstacleUpper.gameObject.transform.parent = LastTile.transform;
+        obstacleLower.transform.parent = LastTile.transform;
+        obstacleMiddle.transform.parent = LastTile.transform;
+        obstacleUpper.transform.parent = LastTile.transform;
 
-        obstacleLower.gameObject.SetActive(true);
-        obstacleMiddle.gameObject.SetActive(true);
-        obstacleUpper.gameObject.SetActive(true);
+        obstacleLower.SetActive(true);
+        obstacleMiddle.SetActive(true);
+        obstacleUpper.SetActive(true);
 
     }
     private void SpawnJumpOnlyObstacle(float x, float surfaceY, float z)
@@ -171,11 +168,11 @@ public class ObstaclesManager : MonoBehaviour
         obstacleLower.transform.position = new Vector3(x, surfaceY + heightHalf, z);
         obstacleUpper.transform.position = new Vector3(x, surfaceY + (heightHalf * 6), z);
 
-        obstacleLower.gameObject.transform.parent = LastTile.transform;
-        obstacleUpper.gameObject.transform.parent = LastTile.transform;
+        obstacleLower.transform.parent = LastTile.transform;
+        obstacleUpper.transform.parent = LastTile.transform;
 
-        obstacleLower.gameObject.SetActive(true);
-        obstacleUpper.gameObject.SetActive(true);
+        obstacleLower.SetActive(true);
+        obstacleUpper.SetActive(true);
     }
     private void SpawnCrouchOnlyObstacle(float x, float surfaceY, float z)
     {
@@ -188,11 +185,11 @@ public class ObstaclesManager : MonoBehaviour
         obstacleLower.transform.position = new Vector3(x, surfaceY + (heightHalf * 2), z);
         obstacleUpper.transform.position = new Vector3(x, surfaceY + (heightHalf * 4), z);
 
-        obstacleLower.gameObject.transform.parent = LastTile.transform;
-        obstacleUpper.gameObject.transform.parent = LastTile.transform;
+        obstacleLower.transform.parent = LastTile.transform;
+        obstacleUpper.transform.parent = LastTile.transform;
 
-        obstacleLower.gameObject.SetActive(true);
-        obstacleUpper.gameObject.SetActive(true);
+        obstacleLower.SetActive(true);
+        obstacleUpper.SetActive(true);
     }
     private void SpawnCrouchJumpOnlyObstacle(float x, float surfaceY, float z)
     {
@@ -205,11 +202,11 @@ public class ObstaclesManager : MonoBehaviour
         obstacleLower.transform.position = new Vector3(x, surfaceY + heightHalf, z);
         obstacleUpper.transform.position = new Vector3(x, surfaceY + (heightHalf * 3), z);
 
-        obstacleLower.gameObject.transform.parent = LastTile.transform;
-        obstacleUpper.gameObject.transform.parent = LastTile.transform;
+        obstacleLower.transform.parent = LastTile.transform;
+        obstacleUpper.transform.parent = LastTile.transform;
 
-        obstacleLower.gameObject.SetActive(true);
-        obstacleUpper.gameObject.SetActive(true);
+        obstacleLower.SetActive(true);
+        obstacleUpper.SetActive(true);
     }
     private void SpawnNotJumpObstacle(float x, float surfaceY, float z)
     {
@@ -220,9 +217,9 @@ public class ObstaclesManager : MonoBehaviour
 
         obstacle.transform.position = new Vector3(x, surfaceY + (heightHalf * 2), z);
 
-        obstacle.gameObject.transform.parent = LastTile.transform;
+        obstacle.transform.parent = LastTile.transform;
 
-        obstacle.gameObject.SetActive(true);
+        obstacle.SetActive(true);
     }
     private void SpawnNotCrouchObstacle(float x, float surfaceY, float z)
     {
@@ -233,8 +230,8 @@ public class ObstaclesManager : MonoBehaviour
 
         obstacle.transform.position = new Vector3(x, surfaceY + heightHalf, z);
 
-        obstacle.gameObject.transform.parent = LastTile.transform;
+        obstacle.transform.parent = LastTile.transform;
 
-        obstacle.gameObject.SetActive(true);
+        obstacle.SetActive(true);
     }
 }
