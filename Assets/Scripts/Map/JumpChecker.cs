@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class JumpChecker : MonoBehaviour
 {
-
-
-    [SerializeField] BoxCollider playerGroundSensor;
+    [SerializeField] BoxCollider playerGroundSensor; 
+    [SerializeField] private AnimationHandler animationHandler;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             playerGroundSensor.enabled = true;
+            animationHandler.SetGrounded(false);
         }
     }
 }

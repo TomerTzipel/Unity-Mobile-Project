@@ -4,6 +4,7 @@ public class PlayerJump : MonoBehaviour
 {
 
     [SerializeField] private PlayerMovementSettings SO_playerMovementSettings;
+    [SerializeField] private AnimationHandler animationHandler;
     [SerializeField] private Rigidbody rb;
 
 
@@ -24,6 +25,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (SO_playerMovementSettings.State == PlayerState.Airborne) return;
 
+        animationHandler.OnJumpInput();
         Vector3 JumpVelocity = SO_playerMovementSettings.JumpVelocity;
 
         if (SO_playerMovementSettings.IsSlideJumping)

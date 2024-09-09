@@ -80,10 +80,6 @@ public class UpdatedObstacleManager : MonoBehaviour
 
     private void PlaceObstacle(Obstacle obstacle,Lane lane)
     {
-        float lastTileX = LastTile.transform.position.x;
-        float surfaceY = LastTile.transform.localScale.y / 2;
-        float lastTileWidth = LastTile.transform.localScale.x;
-
         float obstacleX = 0f;
         switch (lane)
         {
@@ -94,10 +90,8 @@ public class UpdatedObstacleManager : MonoBehaviour
                 obstacleX += (1f / 3f);
                 break;
         }
+        float obstacleY = 0;
 
-        //Need to change all when assets come
-        float obstacleY  = surfaceY; 
-        float heightHalf = obstacle.transform.localScale.y / 2f;
         switch (obstacle.Type)
         {
             case ObstacleType.SlideOnly:
@@ -109,15 +103,17 @@ public class UpdatedObstacleManager : MonoBehaviour
             case ObstacleType.SlideJumpOnly:
                 obstacleY = 3f;
                 break;
-            default:
-                obstacleY += heightHalf;
+            case ObstacleType.JumpOnly:
+                obstacleY = 1.5f;
+                break;
+            case ObstacleType.AnyJump:
+                obstacleY = 1.9f;
                 break;
         }
 
         obstacle.transform.parent = LastTile.transform;
         obstacle.transform.localPosition = new Vector3(obstacleX, obstacleY, 0f);
         obstacle.gameObject.SetActive(true);
-
     }
     private void ChooseObstacles(out ObstacleType type1, out ObstacleType type2, out ObstacleType type3)
     {

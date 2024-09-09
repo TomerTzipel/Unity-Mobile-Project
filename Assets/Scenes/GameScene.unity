@@ -8232,11 +8232,11 @@ MonoBehaviour:
   gameManager: {fileID: 1366731792}
   FullObstaclePrefab: {fileID: 8990339596894033470, guid: 7c99d587f418bdd4480517e0ad4be468,
     type: 3}
-  AnyJumpObstaclePrefab: {fileID: 4291285222462910695, guid: e39fc67f511816441814257ca1a7c069,
+  AnyJumpObstaclePrefab: {fileID: 16366850237367963, guid: 897a3ace060e35041acd3f4e94748366,
     type: 3}
-  JumpOnlyObstaclePrefab: {fileID: 6658309579539489695, guid: 33ab70bf74bd09f428a60be23c6cd18f,
+  JumpOnlyObstaclePrefab: {fileID: 6781219509667255686, guid: 55bedc13d986076489950c9bc8cd4add,
     type: 3}
-  SlideJumpObstaclePrefab: {fileID: 6718552629601308567, guid: 15ec9657916ad9c40b4efefbd828ff1d,
+  SlideJumpObstaclePrefab: {fileID: 3613862406929407045, guid: 345c41aedb2e4984ab0de633e55ad4cf,
     type: 3}
   SlideObstaclePrefab: {fileID: 4807635984255611943, guid: f377a9c84b66d4448871d498b52608f1,
     type: 3}
@@ -11840,7 +11840,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -192.08084, y: -25}
+  m_AnchoredPosition: {x: -192.08105, y: -25}
   m_SizeDelta: {x: 384.1619, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2113604506
