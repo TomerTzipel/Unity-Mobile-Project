@@ -80,39 +80,42 @@ public class UpdatedObstacleManager : MonoBehaviour
 
     private void PlaceObstacle(Obstacle obstacle,Lane lane)
     {
-        float obstacleZ = LastTile.transform.position.z;
-
         float lastTileX = LastTile.transform.position.x;
-        float surfaceY = LastTile.transform.position.y + (LastTile.transform.localScale.y / 2);
+        float surfaceY = LastTile.transform.localScale.y / 2;
         float lastTileWidth = LastTile.transform.localScale.x;
 
-        float obstacleX = lastTileX;
+        float obstacleX = 0f;
         switch (lane)
         {
             case Lane.Left:
-                obstacleX -= lastTileWidth / 3;
+                obstacleX -= (1f / 3f);
                 break;
             case Lane.Right:
-                obstacleX += lastTileWidth / 3;
+                obstacleX += (1f / 3f);
                 break;
         }
 
         //Need to change all when assets come
         float obstacleY  = surfaceY; 
-        float heightHalf = obstacle.transform.localScale.y / 2;
+        float heightHalf = obstacle.transform.localScale.y / 2f;
         switch (obstacle.Type)
         {
             case ObstacleType.SlideOnly:
-                obstacleY += (heightHalf * 2f);
+                obstacleY = 3.25f;
                 break;
-
+            case ObstacleType.FullyBlocked:
+                obstacleY = 4.5f;
+                break;
+            case ObstacleType.SlideJumpOnly:
+                obstacleY = 3f;
+                break;
             default:
                 obstacleY += heightHalf;
                 break;
         }
 
-        obstacle.transform.position = new Vector3(obstacleX, obstacleY, obstacleZ);
         obstacle.transform.parent = LastTile.transform;
+        obstacle.transform.localPosition = new Vector3(obstacleX, obstacleY, 0f);
         obstacle.gameObject.SetActive(true);
 
     }
