@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ObstacleType
+{
+    Open, FullyBlocked, JumpOnly, SlideOnly, SlideJumpOnly, AnyJump, NotJump
+}
+
 public class Obstacle : MonoBehaviour
 {
-    public UpdatedObstacleManager Manager { get; set; }
-
     [SerializeField] private ObstacleType type;
+    [SerializeField] private SpawningManager _manager;
+    public SpawningManager Manager { get { return _manager; } set { _manager = value; } }
 
     public ObstacleType Type { get { return type; } }
 
@@ -14,7 +19,7 @@ public class Obstacle : MonoBehaviour
     {
         if (other.CompareTag("ObstacleRemover"))
         {
-            Manager.ReturnObstacleToPool(this);
+            _manager.ReturnObstacleToPool(this);
         }
     }
 }

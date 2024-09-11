@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   jumpForce: 10
-  crouchJumpForce: 13
+  crouchJumpForce: 16
   swipeMaxTime: 1.5
   swipeMinDistance: 2
   swipeAngleThreshold: 30

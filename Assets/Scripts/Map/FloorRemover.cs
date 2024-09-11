@@ -3,7 +3,7 @@ using UnityEngine;
 public class FloorRemover : MonoBehaviour
 {
     [SerializeField] private MapSettings SO_MapSettings;
-    [SerializeField] private UpdatedObstacleManager obstaclesManager;
+    [SerializeField] private SpawningManager obstaclesManager;
     
     private void OnTriggerEnter(Collider other)
     {

@@ -11,15 +11,25 @@ public enum PowerUpType
 
 public class PowerUp : MonoBehaviour
 {
-    [SerializeField] PowerUpSettings powerUpSettings;
-    [SerializeField] PowerUpType type;
+    [SerializeField] private PowerUpSettings powerUpSettings;
+    [SerializeField] private PowerUpType type;
+
+    [SerializeField] private SpawningManager _manager;
+    public SpawningManager Manager { get { return _manager; } set { _manager = value; } }
+
+    public PowerUpType Type { get { return type; } }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             powerUpSettings.CurrentPowerUp = type;
-            //Return to pool
+            _manager.ReturnPowerUpToPool(this);
+        }
+
+        if (other.CompareTag("ObstacleRemover"))
+        {
+            _manager.ReturnPowerUpToPool(this);
         }
     }
 }
