@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5f4a0c434d1dc8d49bea6c1c3005c35b,
         type: 3}
       propertyPath: m_Name
-      value: FullObstaclePrefab
+      value: FullObstacle
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5f4a0c434d1dc8d49bea6c1c3005c35b,
         type: 3}
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  _manager: {fileID: 0}
 --- !u!65 &4298639954096233130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -139,5 +140,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.080613464, y: 0.27428877, z: 0.2637703}
-  m_Center: {x: 0.0011016933, y: -0.027815962, z: -0.0010154169}
+  m_Size: {x: 0.080613464, y: 0.27428877, z: 0.19555162}
+  m_Center: {x: 0.0011016921, y: -0.027815962, z: -0.0036782734}

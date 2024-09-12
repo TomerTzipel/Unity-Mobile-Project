@@ -7,7 +7,14 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField] private TimerManager scoreManager;
     [SerializeField] private PowerUpSettings powerUpSettings;
 
-    private int hp;
+    [SerializeField] private GameObject shieldVisual;
+
+    [SerializeField] private SkinnedMeshRenderer[] playerHairParts;
+    [SerializeField] private Material normalHairMaterial;
+    [SerializeField] private Material invulHairMaterial;
+
+    [SerializeField] private HpVisualManager hpVisualManager;
+    private int _hp;
     [SerializeField] private int MaxHp; 
     [SerializeField] private int healValue;
     
@@ -18,8 +25,9 @@ public class PlayerCollision : MonoBehaviour
 
     private void Awake()
     {
-        hp = MaxHp;
-        //set up hp visual
+        shieldVisual.SetActive(false);
+        hpVisualManager.UpdateHpVisual(MaxHp);
+        _hp = MaxHp;  
     }
 
     private void OnTriggerEnter(Collider other)
@@ -56,11 +64,11 @@ public class PlayerCollision : MonoBehaviour
 
     private void TakeDamage()
     {
-        hp--;
+        _hp--;
 
-        //update visual
+        hpVisualManager.UpdateHpVisual(_hp);
 
-        if (hp <= 0)
+        if (_hp <= 0)
         {
             Lose();
         }
@@ -70,32 +78,46 @@ public class PlayerCollision : MonoBehaviour
     private IEnumerator ActivateInvulnerability()
     {
         _isInvulnerable = true;
-        //activate invul effect visual
+        ActivateInvulnerabilityVisual();
         yield return new WaitForSeconds(invulnerabilityDuration);
-        //deactivate invul effect visual
+        DeactivateInvulnerabilityVisual();
         _isInvulnerable = false;
     }
 
+    private void ActivateInvulnerabilityVisual()
+    {
+        foreach (var hair in playerHairParts)
+        {
+            hair.material = invulHairMaterial;
+        }
+    }
+    private void DeactivateInvulnerabilityVisual()
+    {
+        foreach (var hair in playerHairParts)
+        {
+            hair.material = normalHairMaterial;
+        }
+    }
     private void ActivateHeal()
     {
-        hp+= healValue;
-        if (hp > MaxHp) 
+        _hp += healValue;
+        if (_hp > MaxHp) 
         {
-            hp = MaxHp;
+            _hp = MaxHp;
         }
-        //update hp visual
+        hpVisualManager.UpdateHpVisual(_hp);
     }
 
     private void ActivateShield()
     {
         _isShielded = true;
-        //Add shield visual
+        shieldVisual.SetActive(true);
     }
 
     private void RemoveShield()
     {
         _isShielded = false;
-        //Remove shield visual
+        shieldVisual.SetActive(false);
     }
 
     private void Lose()

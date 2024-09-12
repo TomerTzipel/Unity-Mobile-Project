@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 4
+  _manager: {fileID: 0}
 --- !u!65 &4685968888240217714
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -139,5 +140,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.02780134, y: 0.047199704, z: 0.0543103}
-  m_Center: {x: -0.00086676783, y: 0.0070310705, z: 0.002711167}
+  m_Size: {x: 0.027801352, y: 0.047199704, z: 0.022681257}
+  m_Center: {x: -0.00086676783, y: 0.0070310705, z: -0.00806621}

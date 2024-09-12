@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
 
     [SerializeField] private LevelSettings levelSettings;
-
+    [SerializeField] private SpawningManager spawningManager;
     [SerializeField] private int scorePerTimeReward;
     [SerializeField] private int timeRewardInterval;
     [SerializeField] private int scorePerPowerUp;
@@ -75,6 +75,7 @@ public class ScoreManager : MonoBehaviour
     private void ChangeLevel()
     {
         levelSettings.NextLevel();
+        spawningManager.ResetPowerUpCounter();
         foreach (var text in levelTexts)
         {
             text.text = $"Level {levelSettings.CurrentLevel.Index+1}";

@@ -73,6 +73,12 @@ public class SpawningManager : MonoBehaviour
             SpawnObstacles();
         }
     }
+
+    public void ResetPowerUpCounter()
+    {
+        _powerUpSpawnCounter = 0;
+    }
+
     private void SpawnObstacles()
     {
         ObstacleType chosenTypeLeft, chosenTypeMid, chosenTypeRight;
@@ -87,7 +93,7 @@ public class SpawningManager : MonoBehaviour
         if (obstacleRight != null) PlaceObstacle(obstacleRight, Lane.Right);
 
         _powerUpSpawnCounter++;
-        Debug.Log(_powerUpSpawnCounter);
+
         if (_powerUpSpawnCounter == PowerUpSpawnRate)
         {
             _powerUpSpawnCounter = 0;

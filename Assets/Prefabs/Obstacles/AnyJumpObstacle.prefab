@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5a22105dcf8112146ae9fd8247bd5100,
         type: 3}
       propertyPath: m_Name
-      value: FenceFull
+      value: AnyJumpObstacle
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5a22105dcf8112146ae9fd8247bd5100,
         type: 3}
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 5
+  _manager: {fileID: 0}
 --- !u!65 &2000104208209621229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -139,5 +140,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.008744223, y: 0.047451284, z: 0.03074807}
-  m_Center: {x: -0.0000009720679, y: -0.00008586049, z: -0.002604514}
+  m_Size: {x: 0.008744224, y: 0.040522825, z: 0.03074807}
+  m_Center: {x: -0.0000009719282, y: -0.00020816401, z: -0.0026045144}
