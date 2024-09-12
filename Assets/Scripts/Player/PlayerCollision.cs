@@ -1,9 +1,9 @@
 using System.Collections;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private TimerManager scoreManager;
     [SerializeField] private PowerUpSettings powerUpSettings;
 
@@ -83,9 +83,7 @@ public class PlayerCollision : MonoBehaviour
         {
             hp = MaxHp;
         }
-
         //update hp visual
-
     }
 
     private void ActivateShield()
@@ -102,6 +100,6 @@ public class PlayerCollision : MonoBehaviour
 
     private void Lose()
     {
-        //start lose sequence   
+        //gameManager.GameOver();
     }
 }

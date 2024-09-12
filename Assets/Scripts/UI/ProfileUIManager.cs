@@ -10,11 +10,12 @@ public class ProfileUIManager : MonoBehaviour
     [SerializeField] RawImage profileImage;
 
     private ProfileManager profileManager;
+
     private string photoPath = "";
 
-    private void Start()
+    private void Awake()
     {
-        profileManager = FindObjectOfType<ProfileManager>();
+        profileManager = new ProfileManager();
     }
 
     public void OnSaveButtonClicked()

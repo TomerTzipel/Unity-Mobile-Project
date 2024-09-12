@@ -48,7 +48,7 @@ public class ScoreManager : MonoBehaviour
 
     private void AddScore(int value)
     {
-        _score += value;
+        _score += (int)(value * levelSettings.CurrentLevel.ScoreMultiplier);
         UpdateUI();
 
         if (_score >= levelSettings.CurrentLevel.ScoreToFinish)

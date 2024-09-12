@@ -6,6 +6,7 @@ using UnityEngine;
 public class Level : ScriptableObject
 {
     [SerializeField] private int index;
+    [SerializeField] private int scoreToUnlock;
     [SerializeField] private int scoreToFinish; 
     [SerializeField] private float scoreMultiplier;
     [SerializeField] private float speedMultiplier;
@@ -17,6 +18,7 @@ public class Level : ScriptableObject
     [SerializeField] private int powerUpSpawnRate;
     
     public int Index { get { return index; } }
+    public int ScoreToUnlock { get { return scoreToUnlock; } }
     public int ScoreToFinish { get { return scoreToFinish; } }
     public float ScoreMultiplier { get { return scoreMultiplier; } }
     public float SpeedMultiplier { get { return speedMultiplier; } }

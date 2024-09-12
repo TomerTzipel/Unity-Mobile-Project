@@ -38,8 +38,8 @@ public class SpawningManager : MonoBehaviour
     private void Awake()
     {
 
-        //if (levelSettings.CurrentLevel == null) levelSettings.SetCurrentLevel(0);
-        levelSettings.SetCurrentLevel(0);
+        if (levelSettings.CurrentLevel == null) levelSettings.SetCurrentLevel(0);
+
         _obstaclePools.Add(ObstacleType.FullyBlocked,new GameObjectPool<Obstacle>(fullObstaclePrefab));
         _obstaclePools.Add(ObstacleType.AnyJump, new GameObjectPool<Obstacle>(anyJumpObstaclePrefab));
         _obstaclePools.Add(ObstacleType.JumpOnly, new GameObjectPool<Obstacle>(jumpOnlyObstaclePrefab));

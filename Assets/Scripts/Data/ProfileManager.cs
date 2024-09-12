@@ -1,28 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using System.IO;
 using UnityEngine;
 
-public class ProfileManager : MonoBehaviour
+public class ProfileManager
 {
-    private string filePath;
+    private string _filePath;
 
-    private void Start()
+    public ProfileManager()
     {
-        filePath = Path.Combine(Application.persistentDataPath, "playerProfile.json");
+        _filePath = Path.Combine(Application.persistentDataPath, "playerProfile.json");
     }
 
     public void SaveProfile(PlayerProfile profile)
     {
         string json = JsonUtility.ToJson(profile);
-        File.WriteAllText(filePath, json);
+        File.WriteAllText(_filePath, json);
     }
 
     public PlayerProfile LoadProfile()
     {
-        if (File.Exists(filePath))
+        if (File.Exists(_filePath))
         {
-            string json = File.ReadAllText(filePath);
+            string json = File.ReadAllText(_filePath);
             return JsonUtility.FromJson<PlayerProfile>(json);
         }
         return null;

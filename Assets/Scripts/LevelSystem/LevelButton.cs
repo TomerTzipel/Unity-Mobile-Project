@@ -13,7 +13,7 @@ public class LevelButton : MonoBehaviour
 
     private bool IsLocked
     {
-        get { return PlayerPrefsManager.GetPlayerBestScore() < level.ScoreToFinish; }
+        get { return PlayerPrefsManager.GetPlayerBestScore() < level.ScoreToUnlock; }
     }
 
     private void Awake()
@@ -27,10 +27,13 @@ public class LevelButton : MonoBehaviour
         {
             cb.normalColor = unlockedColor;
         }
+        button.colors = cb;
     }
 
     public void SetUpLevel()
     {
+        Debug.Log(PlayerPrefsManager.GetPlayerBestScore());
+        Debug.Log(level.ScoreToUnlock);
         if (IsLocked) return;
 
         levelSettings.SetCurrentLevel(level.Index);

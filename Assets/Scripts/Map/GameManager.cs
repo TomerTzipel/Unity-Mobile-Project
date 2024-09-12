@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private MapSettings SO_MapSettings;
     [SerializeField] private GameObject firstLastTile;
-
+    [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private UIManager uiManager;
     [SerializeField] private PlayerSwipeMovement playerSwipe;
 
@@ -50,6 +50,14 @@ public class GameManager : MonoBehaviour
             SO_MapSettings.speedMultiplier = 1.5f;
         }*/
     }
+
+    public void GameOver()
+    {
+        PauseGame();
+        scoreManager.UpdateBestScore();
+        uiManager.LoadGameOverScreen();
+    }
+
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("Menu");
