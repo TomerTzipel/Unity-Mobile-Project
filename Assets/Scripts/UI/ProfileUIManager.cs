@@ -5,9 +5,13 @@ using System.IO;
 
 public class ProfileUIManager : MonoBehaviour
 {
-    [SerializeField] TMP_InputField nameInputField;
-    [SerializeField] TMP_InputField ageInputField;
-    [SerializeField] RawImage profileImage;
+    [SerializeField] TMP_InputField nameInputFieldPortrait;
+    [SerializeField] TMP_InputField ageInputFieldPortrait;
+    [SerializeField] RawImage profileImagePortrait;
+
+    [SerializeField] TMP_InputField nameInputFieldLandscape;
+    [SerializeField] TMP_InputField ageInputFieldLandscape;
+    [SerializeField] RawImage profileImageLandscape;
 
     private ProfileManager profileManager;
 
@@ -18,7 +22,28 @@ public class ProfileUIManager : MonoBehaviour
         profileManager = new ProfileManager();
     }
 
-    public void OnSaveButtonClicked()
+    public void OnSaveButtonClickedPortrait()
+    {
+        OnSaveButtonClicked(nameInputFieldPortrait, ageInputFieldPortrait);
+    }
+    public void OnSaveButtonClickedLandscape()
+    {
+        OnSaveButtonClicked(nameInputFieldLandscape, ageInputFieldLandscape);
+    }
+    public void OnLoadButtonClicked()
+    {
+        OnLoadButtonClicked(nameInputFieldPortrait, ageInputFieldPortrait, profileImagePortrait);
+        OnLoadButtonClicked(nameInputFieldLandscape, ageInputFieldLandscape, profileImageLandscape);
+    }
+
+    public void OnUploadButtonClicked()
+    {
+        OnUploadButtonClicked(profileImagePortrait);
+        OnUploadButtonClicked(profileImageLandscape);
+    }
+
+
+    private void OnSaveButtonClicked(TMP_InputField nameInputField, TMP_InputField ageInputField)
     {
         string name = nameInputField.text;
         int age = int.Parse(ageInputField.text);
@@ -32,7 +57,7 @@ public class ProfileUIManager : MonoBehaviour
         Debug.Log("Profile Saved!");
     }
 
-    public void OnLoadButtonClicked()
+    private void OnLoadButtonClicked(TMP_InputField nameInputField, TMP_InputField ageInputField, RawImage profileImage)
     {
         PlayerProfile profile = profileManager.LoadProfile();
 
@@ -60,8 +85,8 @@ public class ProfileUIManager : MonoBehaviour
             Debug.Log("No profile found.");
         }
     }
-    
-    public void OnUploadButtonClicked()
+
+    private void OnUploadButtonClicked(RawImage profileImage)
     {
         NativeCamera.Permission permission = NativeCamera.TakePicture((path) =>
         {

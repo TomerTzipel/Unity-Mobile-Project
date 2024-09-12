@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerSwipeMovement playerSwipe;
 
     [SerializeField] private TimerManager TimerManager;
+    [SerializeField] private AudioListener audioListener;
 
     public GameObject FirstLastTile
     {
@@ -41,14 +42,14 @@ public class GameManager : MonoBehaviour
             playerSwipe.enabled = false;
         }
 
-        /*if (PlayerPrefs.GetString(PlayerPrefsManager.GetDifficultyMode()) == "Easy")
+        if (PlayerPrefs.GetString(PlayerPrefsManager.GetSoundMode()) == PlayerPrefsManager.soundOnValue)
         {
-            SO_MapSettings.speedMultiplier = 1f;
+            audioListener.enabled = true;
         }
         else
         {
-            SO_MapSettings.speedMultiplier = 1.5f;
-        }*/
+            audioListener.enabled = false;
+        }
     }
 
     public void GameOver()
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        ResumeGame();
         SceneManager.LoadScene("Menu");
     }
 

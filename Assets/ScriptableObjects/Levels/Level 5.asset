@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Level 5
   m_EditorClassIdentifier: 
   index: 4
+  scoreToUnlock: 3000
   scoreToFinish: 4500
   scoreMultiplier: 1.6
   speedMultiplier: 1.25

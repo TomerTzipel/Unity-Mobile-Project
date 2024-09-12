@@ -6,8 +6,10 @@ using System.Collections;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] Button controlModeButton;
-    [SerializeField] Button difficultyButton;
+    [SerializeField] Button controlModeButtonPortrait;
+    [SerializeField] Button muteButtonPortrait; 
+    [SerializeField] Button controlModeButtonLandscape;
+    [SerializeField] Button muteButtonLandscape;
 
     [SerializeField] Sprite offMode;
     [SerializeField] Sprite onMode;
@@ -16,11 +18,13 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] AudioSource sfxSuccess;
     [SerializeField] AudioSource sfxFailure;
 
-    [SerializeField] Image TransitionUi;
+    [SerializeField] TransitionUI TransitionUi;
+
+    [SerializeField] AudioListener audioListener;
 
     public float sceneLoadTime;
 
-    void Start()
+    void Awake()
     {
         PlayerPrefsManager.InitializePlayerPrefs();
         UpdateUI();
@@ -30,20 +34,26 @@ public class MainMenuManager : MonoBehaviour
     {
         if (PlayerPrefsManager.GetControlMode() == PlayerPrefsManager.controlModeTouchValue)
         {
-            controlModeButton.image.sprite = onMode;
+            controlModeButtonPortrait.image.sprite = onMode;
+            controlModeButtonLandscape.image.sprite = onMode;
         }
         else
         {
-            controlModeButton.image.sprite = offMode;
+            controlModeButtonPortrait.image.sprite = offMode;
+            controlModeButtonLandscape.image.sprite = offMode;
         }
 
-        if (PlayerPrefsManager.GetDifficultyMode() == PlayerPrefsManager.difficultyModeEasyValue)
+        if (PlayerPrefsManager.GetSoundMode() == PlayerPrefsManager.soundOnValue)
         {
-            difficultyButton.image.sprite = offMode;
+            muteButtonPortrait.image.sprite = offMode;
+            muteButtonLandscape.image.sprite = offMode;
+            audioListener.enabled = true;
         }
         else
         {
-            difficultyButton.image.sprite = onMode;
+            audioListener.enabled = false;
+            muteButtonPortrait.image.sprite = onMode;
+            muteButtonLandscape.image.sprite = onMode;
         }
     }
 
@@ -61,15 +71,17 @@ public class MainMenuManager : MonoBehaviour
         UpdateUI();
     }
 
-    public void DifficultyModePressed()
+    public void MutePressed()
     {
-        if (PlayerPrefsManager.GetDifficultyMode() == "Easy")
+        if (PlayerPrefsManager.GetSoundMode() == PlayerPrefsManager.soundOnValue)
         {
-            PlayerPrefsManager.SetDifficultyMode("Hard");
+            audioListener.enabled = false;
+            PlayerPrefsManager.SetSoundMode(PlayerPrefsManager.soundOffValue);
         }
         else
         {
-            PlayerPrefsManager.SetDifficultyMode("Easy");
+            audioListener.enabled = true;
+            PlayerPrefsManager.SetSoundMode(PlayerPrefsManager.soundOnValue);
         }
 
         UpdateUI();
@@ -87,7 +99,7 @@ public class MainMenuManager : MonoBehaviour
             {
                 StaticData.checkPointScoreValueToKeep = levelScoreThreshold;
 
-                TransitionUi.GetComponent<TransitionUI>().TransitionStart();
+                TransitionUi.TransitionStart();
 
                 StartCoroutine(LoadSceneAfterDelay("GameScene", sceneLoadTime));
 

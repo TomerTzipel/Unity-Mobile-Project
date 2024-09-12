@@ -3,7 +3,7 @@ using UnityEngine;
 public static class PlayerPrefsManager
 {
     private const string controlModeKey = "ControlMode";
-    private const string difficultyModeKey = "DifficulityMode";
+    private const string soundModeKey = "SoundMode";
     private const string bestScoreKey = "BestScore";
     public const string lastLoginTimeKey = "LastLoginTime";
     public const string currentDayKey = "CurrentDay";
@@ -15,15 +15,15 @@ public static class PlayerPrefsManager
 
     public const string controlModeTouchValue = "Touch";
     public const string controlModeButtonsValue = "Buttons";
-    public const string difficultyModeEasyValue = "Easy";
-    public const string difficultyModeHardValue = "Hard";
+    public const string soundOnValue = "On";
+    public const string soundOffValue = "Off";
 
     public static void InitializePlayerPrefs()
     {
         if (!PlayerPrefs.HasKey(controlModeKey))
         {
             PlayerPrefs.SetString(controlModeKey, controlModeTouchValue);
-            PlayerPrefs.SetString(difficultyModeKey, difficultyModeEasyValue);
+            PlayerPrefs.SetString(soundModeKey, soundOnValue);
             PlayerPrefs.SetInt(bestScoreKey, 0);
             PlayerPrefs.SetInt(coinsKey, 0);
             PlayerPrefs.Save();
@@ -40,13 +40,13 @@ public static class PlayerPrefsManager
         PlayerPrefs.SetString(controlModeKey, mode);
         PlayerPrefs.Save();
     }
-    public static string GetDifficultyMode()
+    public static string GetSoundMode()
     {
-        return PlayerPrefs.GetString(difficultyModeKey, difficultyModeEasyValue);
+        return PlayerPrefs.GetString(soundModeKey, soundOnValue);
     }
-    public static void SetDifficultyMode(string mode)
+    public static void SetSoundMode(string mode)
     {
-        PlayerPrefs.SetString(difficultyModeKey, mode);
+        PlayerPrefs.SetString(soundModeKey, mode);
         PlayerPrefs.Save();
     }
     public static int GetPlayerCoins()

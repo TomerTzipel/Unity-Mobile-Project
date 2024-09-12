@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum Screen
 {
-    Game,Pause,GameOver
+    Game, Pause, GameOver, MainMenu, LevelSelect, Settings, Dailies, Profile 
 }
 
 public class UIManager : MonoBehaviour
@@ -14,15 +14,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject PauseScreenPanels;
     [SerializeField] private GameObject GameOverScreenPanels;
 
-    [SerializeField] private GameObject[] landscapePanels;
-    [SerializeField] private GameObject[] portraitPanels;
+    [SerializeField] protected GameObject[] landscapePanels;
+    [SerializeField] protected GameObject[] portraitPanels;
 
-    private Screen _currentScreen;
+    protected Screen _currentScreen;
 
-    private DeviceOrientation _orientation;
+    protected DeviceOrientation _orientation;
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _currentScreen = Screen.Game;
         OnOrientationChange();
@@ -46,7 +46,7 @@ public class UIManager : MonoBehaviour
         ChangeScreen(Screen.GameOver);
     }
 
-    private void ChangeScreen(Screen screen)
+    protected virtual void ChangeScreen(Screen screen)
     {
         switch (_currentScreen)
         {
@@ -86,7 +86,7 @@ public class UIManager : MonoBehaviour
         buttonsPanels.SetActive(false);
     }
 
-    private void OnOrientationChange()
+    protected void OnOrientationChange()
     {
         _orientation = Input.deviceOrientation;
 
