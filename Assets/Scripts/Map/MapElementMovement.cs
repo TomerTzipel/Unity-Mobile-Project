@@ -9,7 +9,7 @@ public class MapElementMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 move = SO_MapSettings.TilesSpeed * Time.fixedDeltaTime * Vector3.back;
+        Vector3 move = SO_MapSettings.TileSpeed * Time.fixedDeltaTime * Vector3.back;
         rb.MovePosition(transform.position + move);
     }
 }

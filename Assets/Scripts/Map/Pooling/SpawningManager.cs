@@ -12,6 +12,7 @@ public enum Lane
 public class SpawningManager : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private LevelSettings levelSettings;
 
     [SerializeField] private Obstacle fullObstaclePrefab;
     [SerializeField] private Obstacle anyJumpObstaclePrefab;
@@ -20,11 +21,6 @@ public class SpawningManager : MonoBehaviour
     [SerializeField] private Obstacle slideObstaclePrefab;
 
     private Dictionary<ObstacleType, GameObjectPool<Obstacle>> _obstaclePools = new Dictionary<ObstacleType, GameObjectPool<Obstacle>>();
-
-    private int _obstacleDifficulityMax = 4;
-    private int _obstacleDifficulityMin = 3;
-
-    private int _obstacleSpawnRate = 6; 
     private int _obstacleSpawnCounter = 0;
 
     [SerializeField] private PowerUp healPrefab;
@@ -32,14 +28,18 @@ public class SpawningManager : MonoBehaviour
     [SerializeField] private PowerUp shieldPrefab;
 
     private Dictionary<PowerUpType, GameObjectPool<PowerUp>> _powerUpPools = new Dictionary<PowerUpType, GameObjectPool<PowerUp>>();
+    private int _powerUpSpawnCounter = 0;
 
-    private int _powerUpSpawnRate = 10;
-    private int _powerUpSpawnCounter = 7;
-
-  
+    private int ObstacleDifficulityMax { get { return levelSettings.CurrentLevel.ObstacleDifficulityMax; } }
+    private int ObstacleDifficulityMin { get { return levelSettings.CurrentLevel.ObstacleDifficulityMin; } }
+    private int ObstacleSpawnRate { get { return levelSettings.CurrentLevel.ObstacleSpawnRate; } }
+    private int PowerUpSpawnRate { get { return levelSettings.CurrentLevel.PowerUpSpawnRate; } }
 
     private void Awake()
     {
+
+        //if (levelSettings.CurrentLevel == null) levelSettings.SetCurrentLevel(0);
+        levelSettings.SetCurrentLevel(0);
         _obstaclePools.Add(ObstacleType.FullyBlocked,new GameObjectPool<Obstacle>(fullObstaclePrefab));
         _obstaclePools.Add(ObstacleType.AnyJump, new GameObjectPool<Obstacle>(anyJumpObstaclePrefab));
         _obstaclePools.Add(ObstacleType.JumpOnly, new GameObjectPool<Obstacle>(jumpOnlyObstaclePrefab));
@@ -67,7 +67,7 @@ public class SpawningManager : MonoBehaviour
     public void CheckObstaclesSpawn()
     {
         _obstacleSpawnCounter++;
-        if (_obstacleSpawnCounter == _obstacleSpawnRate)
+        if (_obstacleSpawnCounter == ObstacleSpawnRate)
         {
             _obstacleSpawnCounter = 0;
             SpawnObstacles();
@@ -88,7 +88,7 @@ public class SpawningManager : MonoBehaviour
 
         _powerUpSpawnCounter++;
         Debug.Log(_powerUpSpawnCounter);
-        if (_powerUpSpawnCounter == _powerUpSpawnRate)
+        if (_powerUpSpawnCounter == PowerUpSpawnRate)
         {
             _powerUpSpawnCounter = 0;
 
@@ -153,18 +153,18 @@ public class SpawningManager : MonoBehaviour
         PowerUp powerUp = _powerUpPools[type].GetItem();
         powerUp.Manager = this;
 
-        float obstacleX = 0f;
+        float powerUpX = 0f;
         switch (lane)
         {
             case Lane.Left:
-                obstacleX -= (1f / 3f);
+                powerUpX -= (1f / 3f);
                 break;
             case Lane.Right:
-                obstacleX += (1f / 3f);
+                powerUpX += (1f / 3f);
                 break;
         }
 
-        float obstacleY = 0f;
+        float powerUpY = 0f;
         int heightMult;
         switch (obstacleType)
         {
@@ -172,33 +172,33 @@ public class SpawningManager : MonoBehaviour
                 heightMult = Random.Range(0, 3);
                 if(heightMult == 0)
                 {
-                    obstacleY = 1f;
+                    powerUpY = 1f;
                 }
                 else
                 {
-                    obstacleY = heightMult * 5f;
+                    powerUpY = heightMult * 5f;
                 }
                 break;
 
             case ObstacleType.JumpOnly:
-                obstacleY = 5f;
+                powerUpY = 5f;
                 break;
 
             case ObstacleType.SlideOnly:
-                obstacleY = 1f;
+                powerUpY = 1f;
                 break;
 
             case ObstacleType.SlideJumpOnly:
-                obstacleY = 10f;
+                powerUpY = 10f;
                 break;
             case ObstacleType.AnyJump:
                 heightMult = Random.Range(1, 3);
-                obstacleY = heightMult * 5f;
+                powerUpY = heightMult * 5f;
                 break;
         }
 
         powerUp.transform.parent = LastTile.transform;
-        powerUp.transform.localPosition = new Vector3(obstacleX, obstacleY, 0f);
+        powerUp.transform.localPosition = new Vector3(powerUpX, powerUpY, 0f);
         powerUp.gameObject.SetActive(true);
     }
 
@@ -269,7 +269,7 @@ public class SpawningManager : MonoBehaviour
     {
         int ObstaclesValue = ObstacleValue(type1) + ObstacleValue(type2) + ObstacleValue(type3);
 
-        return ObstaclesValue >= _obstacleDifficulityMin && ObstaclesValue <= _obstacleDifficulityMax;
+        return ObstaclesValue >= ObstacleDifficulityMin && ObstaclesValue <= ObstacleDifficulityMax;
     }
 
     private int ObstacleValue(ObstacleType type)

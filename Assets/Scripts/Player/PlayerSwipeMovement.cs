@@ -55,7 +55,6 @@ public class PlayerSwipeMovement : MonoBehaviour
 
             if (touchEndTime - touchStartTime > SwipeMaxTime)
             {
-                Debug.Log("fail time");
                 return;
             } 
            
@@ -64,7 +63,6 @@ public class PlayerSwipeMovement : MonoBehaviour
 
             if (swipeVector.sqrMagnitude < SwipeMinDistanceSqr)
             {
-                Debug.Log("fail dis");
                 return;
             }
 
@@ -72,29 +70,25 @@ public class PlayerSwipeMovement : MonoBehaviour
 
             if (swipeAngle < 0f + SwipeAngleThreshold && swipeAngle > 0f - SwipeAngleThreshold)
             {
-                Debug.Log("right");
                 OnRightInput();
                 return;
             }
 
             if ((swipeAngle < -180f + SwipeAngleThreshold && swipeAngle > -180f) || swipeAngle > 180f - SwipeAngleThreshold && swipeAngle < 180f)
             {
-                Debug.Log("left");
                 OnLeftInput();
                 return;
             }
 
             if (swipeAngle < 90f + SwipeAngleThreshold && swipeAngle > 90f - SwipeAngleThreshold)
             {
-                Debug.Log("jump");
                 OnJumpInput();
                 return;
             }
 
             if (swipeAngle < -90f + SwipeAngleThreshold && swipeAngle > -90f - SwipeAngleThreshold)
             {
-                Debug.Log("crouch");
-                OnCrouchInput();
+                OnSlideInput();
                 return;
             }
         }
@@ -131,7 +125,7 @@ public class PlayerSwipeMovement : MonoBehaviour
         playerJump.OnJumpInput();
     }
 
-    private void OnCrouchInput()
+    private void OnSlideInput()
     {
         playerSlide.OnSlideInput();
     }

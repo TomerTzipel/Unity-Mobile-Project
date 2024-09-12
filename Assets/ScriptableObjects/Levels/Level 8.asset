@@ -9,8 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a02b75e35b746484496bba08d7209593, type: 3}
-  m_Name: MapSettings
+  m_Script: {fileID: 11500000, guid: 535ecc2250597ee4a9b4fffaf28c2e1b, type: 3}
+  m_Name: Level 8
   m_EditorClassIdentifier: 
-  tilesSpeed: 20
-  levelSettings: {fileID: 11400000, guid: 21445ac2e4f87344d9b906ed90666e26, type: 2}
+  index: 7
+  scoreToFinish: 10500
+  scoreMultiplier: 1.9
+  speedMultiplier: 1.5
+  obstacleDifficulityMax: 2
+  obstacleDifficulityMin: 1
+  obstacleSpawnRate: 4
+  powerUpSpawnRate: 10

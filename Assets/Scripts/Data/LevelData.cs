@@ -6,14 +6,14 @@ public class LevelData : MonoBehaviour
 {
     public static readonly Dictionary<string, int> levelThresholds = new Dictionary<string, int>()
     {
-        { "Level1", 0 },
-        { "Level2", 5000 },
-        { "Level3", 15000 },
-        { "Level4", 30000 },
-        { "Level5", 60000 },
-        { "Level6", 85000 },
-        { "Level7", 100000 },
-        { "Level8", 200000 },
-        { "Level9", 500000 },
+        { "Level1", 400 },
+        { "Level2", 1000 },
+        { "Level3", 1800 },
+        { "Level4", 3000 },
+        { "Level5", 4500 },
+        { "Level6", 6250 },
+        { "Level7", 8250 },
+        { "Level8", 10500 },
+        { "Level9", 999999 },
     };
 }

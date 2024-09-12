@@ -3,10 +3,11 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public class TimerManager : MonoBehaviour
 {
-    [SerializeField] TMP_Text landscapeTimerText;
-    [SerializeField] TMP_Text portraitTimerText;
+    [SerializeField] ScoreManager scoreManager;
+
+    [SerializeField] TMP_Text[] TimerTexts;
 
     private int _seconds;
     private int _minutes;
@@ -23,17 +24,13 @@ public class ScoreManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
             _seconds++;
 
+            if ((_seconds + _minutes * 60) % scoreManager.TimeRewardInterval == 0) scoreManager.RewardTime();
+
             if (_seconds == 60)
             {
                 _seconds = 0;
                 _minutes++;
             }
-
-            if (_minutes == 60)
-            {
-                ResetCounters();
-            }
-
             UpdateTexts();
         }
     }
@@ -54,7 +51,7 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateTexts()
     {
-        string text = "Survival Time - ";
+        string text = "Time - ";
 
         if(_minutes < 10)
         {
@@ -76,7 +73,9 @@ public class ScoreManager : MonoBehaviour
             text += $"{_seconds}";
         }
 
-        landscapeTimerText.text = text;
-        portraitTimerText.text = text;
+        foreach (var timerText in TimerTexts) 
+        {
+            timerText.text = text;
+        }
     }
 }

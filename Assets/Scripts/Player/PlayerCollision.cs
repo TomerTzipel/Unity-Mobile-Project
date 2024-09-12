@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    [SerializeField] private ScoreManager scoreManager;
+    [SerializeField] private TimerManager scoreManager;
     [SerializeField] private PowerUpSettings powerUpSettings;
 
     private int hp;
@@ -35,7 +35,6 @@ public class PlayerCollision : MonoBehaviour
             }
 
             TakeDamage();
-            scoreManager.ResetTimer();
         }
 
         if (other.CompareTag("PowerUp"))

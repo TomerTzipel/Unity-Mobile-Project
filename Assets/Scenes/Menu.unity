@@ -12013,7 +12013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52bd605b27c71744c97a0f6832c30baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonParent: {fileID: 1677618995}
+  buttonsParent: {fileID: 1677618995}
 --- !u!1 &1694192803
 GameObject:
   m_ObjectHideFlags: 0

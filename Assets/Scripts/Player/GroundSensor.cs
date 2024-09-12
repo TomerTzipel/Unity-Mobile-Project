@@ -12,7 +12,6 @@ public class GroundSensor : MonoBehaviour
     {
         if (other.CompareTag("Ground"))
         {
-            Debug.Log("Grounded");
             animationHandler.SetGrounded(true);
             SO_playerMovementSettings.State = PlayerState.Standing;
             playerGroundSensor.enabled = false;

@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelManager : MonoBehaviour
+public class LevelButtonsManager : MonoBehaviour
 {
-    [SerializeField] GameObject buttonParent;
+    [SerializeField] GameObject buttonsParent;
 
     private Color lockedColor = new Color32(255, 113, 107, 255);
     private Color unlockedColor = new Color32(107, 255, 226, 255);
-
-    
 
     private List<string> accessibleLevels = new List<string>();
 
@@ -29,14 +27,14 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        foreach (Transform button in buttonParent.transform)
+        foreach (Transform buttonTransform in buttonsParent.transform)
         {
-            Button btn = button.GetComponent<Button>();
+            Button button = buttonTransform.GetComponent<Button>();
 
-            if (btn != null)
+            if (button != null)
             {
-                ColorBlock cb = btn.colors;
-                if (accessibleLevels.Contains(btn.name))
+                ColorBlock cb = button.colors;
+                if (accessibleLevels.Contains(button.name))
                 {
                     cb.normalColor = unlockedColor;
                 }
@@ -44,7 +42,7 @@ public class LevelManager : MonoBehaviour
                 {
                     cb.normalColor = lockedColor;
                 }
-                btn.colors = cb;
+                button.colors = cb;
             }
         }
     }

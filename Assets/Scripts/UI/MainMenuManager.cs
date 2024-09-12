@@ -28,7 +28,7 @@ public class MainMenuManager : MonoBehaviour
 
     void UpdateUI()
     {
-        if (PlayerPrefsManager.GetControlMode() == "Touch")
+        if (PlayerPrefsManager.GetControlMode() == PlayerPrefsManager.controlModeTouchValue)
         {
             controlModeButton.image.sprite = onMode;
         }
@@ -37,7 +37,7 @@ public class MainMenuManager : MonoBehaviour
             controlModeButton.image.sprite = offMode;
         }
 
-        if (PlayerPrefsManager.GetDifficultyMode() == "Easy")
+        if (PlayerPrefsManager.GetDifficultyMode() == PlayerPrefsManager.difficultyModeEasyValue)
         {
             difficultyButton.image.sprite = offMode;
         }
@@ -49,13 +49,13 @@ public class MainMenuManager : MonoBehaviour
 
     public void ControlModePressed()
     {
-        if (PlayerPrefsManager.GetControlMode() == "Touch")
+        if (PlayerPrefsManager.GetControlMode() == PlayerPrefsManager.controlModeTouchValue)
         {
-            PlayerPrefsManager.SetControlMode("Buttons");
+            PlayerPrefsManager.SetControlMode(PlayerPrefsManager.controlModeButtonsValue);
         }
         else
         {
-            PlayerPrefsManager.SetControlMode("Touch");
+            PlayerPrefsManager.SetControlMode(PlayerPrefsManager.controlModeTouchValue);
         }
 
         UpdateUI();

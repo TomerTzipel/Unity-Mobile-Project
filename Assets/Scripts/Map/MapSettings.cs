@@ -8,14 +8,13 @@ using UnityEngine;
 public class MapSettings : ScriptableObject
 {
     [SerializeField] private float tilesSpeed;
-
-    public float speedMultiplier { get; set; }
+    [SerializeField] private LevelSettings levelSettings;
 
     public GameObject LastTile { get; set; }
 
     private float moveSpeedOffset
     {
-        get { return TilesSpeed / 50f; }
+        get { return TileSpeed / 50f; }
     }
 
     public Vector3 RespawnPoint
@@ -27,8 +26,8 @@ public class MapSettings : ScriptableObject
         }
     }
 
-    public float TilesSpeed
+    public float TileSpeed
     {
-        get { return tilesSpeed * speedMultiplier; }
+        get { return tilesSpeed * levelSettings.CurrentLevel.SpeedMultiplier; }
     }
 }
