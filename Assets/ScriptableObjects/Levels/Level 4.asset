@@ -20,4 +20,4 @@ MonoBehaviour:
   obstacleDifficulityMax: 3
   obstacleDifficulityMin: 2
   obstacleSpawnRate: 6
-  powerUpSpawnRate: 8
+  powerUpSpawnRate: 7
