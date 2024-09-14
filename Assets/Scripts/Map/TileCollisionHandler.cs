@@ -12,10 +12,9 @@ public class TileCollisionHandler : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("FloorRemover"))
         {
-            Debug.Log("ok");
             transform.position = SO_MapSettings.RespawnPoint;
             SO_MapSettings.LastTile = tileHandler;
-            tileHandler.ReleaseToPools(spawningManager);
+            tileHandler.ReleaseToPools();
             spawningManager.CheckObstaclesSpawn();
         }
     }

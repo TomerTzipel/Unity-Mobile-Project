@@ -7,7 +7,6 @@ TagManager:
   - Ground
   - Obstacle
   - PowerUp
-  - ObstacleRemover
   - FloorRemover
   layers:
   - Default

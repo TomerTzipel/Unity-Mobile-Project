@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerCollision : MonoBehaviour
+public class PlayerCollision : MonoBehaviour,ISaveable
 {
     [SerializeField] private GameManager gameManager;
     [SerializeField] private TimerManager scoreManager;
@@ -123,5 +123,16 @@ public class PlayerCollision : MonoBehaviour
     private void Lose()
     {
         //gameManager.GameOver();
+    }
+
+    public void LoadData(GameData data)
+    {
+        transform.position = new Vector3(data.PlayerData.PositionX, 0.2f, 0f);
+         _hp = data.PlayerData.Hp;
+    }
+    public void SaveData(ref GameData data)
+    {
+       data.PlayerData.PositionX = transform.position.x;
+        data.PlayerData.Hp = _hp;
     }
 }

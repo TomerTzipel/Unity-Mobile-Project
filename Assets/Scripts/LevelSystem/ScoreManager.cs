@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : MonoBehaviour,ISaveable
 {
 
     [SerializeField] private LevelSettings levelSettings;
@@ -30,10 +30,7 @@ public class ScoreManager : MonoBehaviour
         {
             text.text = $"Best Score - {PlayerPrefsManager.GetPlayerBestScore()}";
         }
-        foreach (var text in levelTexts)
-        {
-            text.text = $"Level {levelSettings.CurrentLevel.Index + 1}";
-        }
+        UpdateLevelUI();
         UpdateUI();
     }
 
@@ -72,14 +69,33 @@ public class ScoreManager : MonoBehaviour
             text.text = $"Score - {_score}";
         }
     }
+    private void UpdateLevelUI()
+    {
+        foreach (var text in levelTexts)
+        {
+            text.text = $"Level {levelSettings.CurrentLevel.Index + 1}";
+        }
+    }
+
     private void ChangeLevel()
     {
         levelSettings.NextLevel();
         spawningManager.ResetPowerUpCounter();
-        foreach (var text in levelTexts)
-        {
-            text.text = $"Level {levelSettings.CurrentLevel.Index+1}";
-        }
+        UpdateLevelUI();
+    }
 
+    public void LoadData(GameData data)
+    {
+        _score = data.PlayerData.Score;
+        UpdateUI();
+
+        levelSettings.SetCurrentLevel(data.PlayerData.Level);
+        UpdateLevelUI();
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.PlayerData.Score = _score;
+        data.PlayerData.Level = levelSettings.CurrentLevel.Index;
     }
 }

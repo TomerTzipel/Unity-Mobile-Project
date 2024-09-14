@@ -8,6 +8,8 @@ public static class PlayerPrefsManager
     public const string lastLoginTimeKey = "LastLoginTime";
     public const string currentDayKey = "CurrentDay";
 
+    public const string isSaveAvailable = "SaveState";
+
     public const string coinsKey = "Coins";
 
     private const string claimedKeyPrefix = "DayClaimed_";
@@ -26,10 +28,28 @@ public static class PlayerPrefsManager
             PlayerPrefs.SetString(soundModeKey, soundOnValue);
             PlayerPrefs.SetInt(bestScoreKey, 0);
             PlayerPrefs.SetInt(coinsKey, 0);
+            PlayerPrefs.SetInt(isSaveAvailable, 0);
             PlayerPrefs.Save();
         }
     }
+    public static bool GetSaveState()
+    {
+        return PlayerPrefs.GetInt(isSaveAvailable, 0) == 1;
+    }
 
+    public static void SetSaveState(bool value)
+    {
+        if (value)
+        {
+            PlayerPrefs.SetInt(isSaveAvailable, 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt(isSaveAvailable, 0);
+        }
+        
+        PlayerPrefs.Save();
+    }
     public static string GetControlMode()
     {
         return PlayerPrefs.GetString(controlModeKey, controlModeTouchValue);

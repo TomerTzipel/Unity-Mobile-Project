@@ -5,18 +5,20 @@ using System.Collections.Generic;
 [Serializable]
 public class MapData
 {
-    private TileData[] _tilesData;
+    public TileData[] TilesData;
+
+    public int ObstaclesCounter;
+    public int PowerUpCounter;
+
     public MapData()
     {
-        _tilesData = new TileData[31];
+        TilesData = new TileData[31];
         for (int i = 0; i < 31; i++) 
         {
-            _tilesData[i] = new TileData();
+            TilesData[i] = new TileData();
         }
+        ObstaclesCounter = 0;
+        PowerUpCounter = 0;
     }
 
-    public TileData[] TileData
-    {
-        get { return _tilesData; }
-    }
 }

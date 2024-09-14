@@ -9,7 +9,7 @@ public enum Lane
     Left, Mid, Right
 }
 
-public class SpawningManager : MonoBehaviour
+public class SpawningManager : MonoBehaviour,ISaveable
 {
     [SerializeField] private GameManager gameManager;
     [SerializeField] private LevelSettings levelSettings;
@@ -37,7 +37,6 @@ public class SpawningManager : MonoBehaviour
 
     private void Awake()
     {
-
         if (levelSettings.CurrentLevel == null) levelSettings.SetCurrentLevel(0);
 
         _obstaclePools.Add(ObstacleType.FullyBlocked,new GameObjectPool<Obstacle>(fullObstaclePrefab));
@@ -327,4 +326,15 @@ public class SpawningManager : MonoBehaviour
         if (rightObstacle != null) PlaceObstacle(rightObstacle, Lane.Right, tile);
     }
 
+    public void LoadData(GameData data)
+    {
+        _obstacleSpawnCounter = data.MapData.ObstaclesCounter;
+        _powerUpSpawnCounter = data.MapData.PowerUpCounter;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.MapData.ObstaclesCounter = _obstacleSpawnCounter;
+        data.MapData.PowerUpCounter = _powerUpSpawnCounter;
+    }
 }

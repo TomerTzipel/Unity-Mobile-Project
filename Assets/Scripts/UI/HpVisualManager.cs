@@ -23,7 +23,6 @@ public class HpVisualManager : MonoBehaviour
 
     public void UpdateHpVisual(int hp)
     {
-        Debug.Log(hp);
         if (hp < 0) return;
         SetHp(hp, fullHeartsPortrait, emptyHeartsPortrait);
         SetHp(hp, fullHeartsLandscape, emptyHeartsLandscape);

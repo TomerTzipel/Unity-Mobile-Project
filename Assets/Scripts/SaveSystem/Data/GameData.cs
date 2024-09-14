@@ -3,15 +3,12 @@ using System;
 [Serializable]
 public class GameData
 {
-    private PlayerData _playerData;
-    private MapData _mapData;
+    public PlayerData PlayerData;
+    public MapData MapData;
 
     public GameData() 
     {
-        _playerData = new PlayerData();
-        _mapData = new MapData();
+        PlayerData = new PlayerData();
+        MapData = new MapData();
     }
-
-    public PlayerData PlayerData {  get { return _playerData; } set { _playerData = value; } }
-    public MapData MapData { get { return _mapData; } set { _mapData = value; } }
 }

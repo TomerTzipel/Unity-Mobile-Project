@@ -135,6 +135,21 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _midObstacle
+      value: 
+      objectReference: {fileID: 1249200332}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _leftObstacle
+      value: 
+      objectReference: {fileID: 1667644700}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -190,6 +205,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 8
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -516,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb347abbccfb88249bf3f23f598dabe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsStartScene: 1
+  IsStartScene: 0
   blackScreen: {fileID: 1600896109}
 --- !u!95 &56188352
 Animator:
@@ -609,6 +629,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -664,6 +689,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -909,6 +939,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -964,6 +999,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -2015,6 +2055,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2070,6 +2115,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 9
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -2243,6 +2293,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2298,6 +2353,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 18
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -2998,59 +3058,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444321329}
   m_CullTransparentMesh: 1
---- !u!1 &486684101
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 486684102}
-  - component: {fileID: 486684104}
-  m_Layer: 0
-  m_Name: ObstacleRemover
-  m_TagString: ObstacleRemover
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &486684102
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 486684101}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 5.75}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 838128791}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &486684104
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 486684101}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 13, y: 14, z: 1}
-  m_Center: {x: 0, y: 6.5, z: 0}
 --- !u!1001 &523775747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3064,6 +3071,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3119,6 +3131,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 3
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -3764,6 +3781,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3821,6 +3843,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
       propertyPath: obstaclesManager
       value: 
       objectReference: {fileID: 1366731795}
@@ -3842,6 +3869,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 29
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3897,6 +3929,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 29
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -4054,6 +4091,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4109,6 +4151,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 10
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -4914,6 +4961,26 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _midObstacle
+      value: 
+      objectReference: {fileID: 2105451487}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _leftObstacle
+      value: 
+      objectReference: {fileID: 853949091}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _rightObstacle
+      value: 
+      objectReference: {fileID: 1976772011}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4969,6 +5036,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 20
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -5132,6 +5204,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1465612287}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &734280229 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8990339596894033470, guid: 7c99d587f418bdd4480517e0ad4be468,
+    type: 3}
+  m_PrefabInstance: {fileID: 1465612287}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947a6c304b882aa4dbdefbcdabc30fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &753338464 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8380020663135171243, guid: de13a7420582ded45a8d7d3f96889aca,
@@ -5473,6 +5557,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5528,6 +5617,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 7
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -5788,6 +5882,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1126323171}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &818845290 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8990339596894033470, guid: 7c99d587f418bdd4480517e0ad4be468,
+    type: 3}
+  m_PrefabInstance: {fileID: 1126323171}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947a6c304b882aa4dbdefbcdabc30fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -5847,6 +5953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 838128791}
   - component: {fileID: 838128788}
+  - component: {fileID: 838128792}
   m_Layer: 0
   m_Name: FloorRemover
   m_TagString: FloorRemover
@@ -5869,7 +5976,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -5887,10 +5994,36 @@ Transform:
   m_LocalPosition: {x: 0, y: -1.5, z: -27.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 486684102}
+  m_Children: []
   m_Father: {fileID: 1959019330}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &838128792
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838128787}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &838309434
 GameObject:
   m_ObjectHideFlags: 0
@@ -6048,6 +6181,26 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _midObstacle
+      value: 
+      objectReference: {fileID: 2040026297}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _leftObstacle
+      value: 
+      objectReference: {fileID: 1652372222}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _rightObstacle
+      value: 
+      objectReference: {fileID: 1576183983}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6103,6 +6256,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 24
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -6206,6 +6364,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1539885244}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &853949091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4807635984255611943, guid: f377a9c84b66d4448871d498b52608f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1539885244}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947a6c304b882aa4dbdefbcdabc30fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &855593975 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
@@ -6740,6 +6910,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6797,6 +6972,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
       propertyPath: obstaclesManager
       value: 
       objectReference: {fileID: 1366731795}
@@ -6818,6 +6998,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6873,6 +7058,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 5
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -7109,6 +7299,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1776080173}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1366731799}
+        m_TargetAssemblyTypeName: SaveSystemManager, Assembly-CSharp
+        m_MethodName: SaveGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8459,6 +8661,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8516,6 +8723,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
       propertyPath: obstaclesManager
       value: 
       objectReference: {fileID: 1366731795}
@@ -8543,6 +8755,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8600,6 +8817,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
       propertyPath: obstaclesManager
       value: 
       objectReference: {fileID: 1366731795}
@@ -8621,6 +8843,26 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _midObstacle
+      value: 
+      objectReference: {fileID: 1836724480}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _leftObstacle
+      value: 
+      objectReference: {fileID: 1802643065}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _rightObstacle
+      value: 
+      objectReference: {fileID: 1804473338}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8678,6 +8920,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
       propertyPath: obstaclesManager
       value: 
       objectReference: {fileID: 1366731795}
@@ -8713,7 +8960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1187763431
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8824,6 +9071,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8879,6 +9131,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 15
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -9325,6 +9582,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2049281371}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1249200332 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8990339596894033470, guid: 7c99d587f418bdd4480517e0ad4be468,
+    type: 3}
+  m_PrefabInstance: {fileID: 2049281371}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947a6c304b882aa4dbdefbcdabc30fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1258456756
 GameObject:
   m_ObjectHideFlags: 0
@@ -9977,6 +10246,7 @@ GameObject:
   - component: {fileID: 1366731796}
   - component: {fileID: 1366731797}
   - component: {fileID: 1366731798}
+  - component: {fileID: 1366731799}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -10156,6 +10426,20 @@ MonoBehaviour:
   - {fileID: 2096582693}
   - {fileID: 2117360232}
   - {fileID: 848495532}
+--- !u!114 &1366731799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366731790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 859ece32502d95c47b98864844982acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: EndlessRunnerSave
+  loadSettings: {fileID: 11400000, guid: 508e9514113d4da4facd0d04cb82797c, type: 2}
 --- !u!1 &1370261618
 GameObject:
   m_ObjectHideFlags: 0
@@ -10774,6 +11058,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10829,6 +11118,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -11217,6 +11511,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11274,6 +11573,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
       propertyPath: obstaclesManager
       value: 
       objectReference: {fileID: 1366731795}
@@ -11295,6 +11599,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 28
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11350,6 +11659,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 28
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -11518,6 +11832,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11573,6 +11892,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 14
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -12056,6 +12380,21 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _midObstacle
+      value: 
+      objectReference: {fileID: 818845290}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _rightObstacle
+      value: 
+      objectReference: {fileID: 734280229}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12111,6 +12450,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile12
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -12269,6 +12613,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 565382190}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1576183983 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3613862406929407045, guid: 345c41aedb2e4984ab0de633e55ad4cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 565382190}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947a6c304b882aa4dbdefbcdabc30fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1589505149 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
@@ -12680,12 +13036,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1652372222 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3613862406929407045, guid: 345c41aedb2e4984ab0de633e55ad4cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1893725341}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947a6c304b882aa4dbdefbcdabc30fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1667644698 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4977005154483981205, guid: 7c99d587f418bdd4480517e0ad4be468,
     type: 3}
   m_PrefabInstance: {fileID: 1530223396}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1667644700 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8990339596894033470, guid: 7c99d587f418bdd4480517e0ad4be468,
+    type: 3}
+  m_PrefabInstance: {fileID: 1530223396}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947a6c304b882aa4dbdefbcdabc30fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1668479869
 GameObject:
   m_ObjectHideFlags: 0
@@ -13014,6 +13394,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13071,6 +13456,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
       propertyPath: obstaclesManager
       value: 
       objectReference: {fileID: 1366731795}
@@ -13092,6 +13482,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 23
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13147,6 +13542,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 23
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -13245,6 +13645,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13300,6 +13705,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 30
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -13606,12 +14016,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 771946387}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1802643065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 16366850237367963, guid: 897a3ace060e35041acd3f4e94748366,
+    type: 3}
+  m_PrefabInstance: {fileID: 771946387}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947a6c304b882aa4dbdefbcdabc30fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1804473336 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6483775736856287026, guid: 897a3ace060e35041acd3f4e94748366,
     type: 3}
   m_PrefabInstance: {fileID: 270571945}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1804473338 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 16366850237367963, guid: 897a3ace060e35041acd3f4e94748366,
+    type: 3}
+  m_PrefabInstance: {fileID: 270571945}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947a6c304b882aa4dbdefbcdabc30fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &1830646109 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: -9094600144070608334, guid: de13a7420582ded45a8d7d3f96889aca,
@@ -13631,6 +14065,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 26
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13688,6 +14127,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
       propertyPath: obstaclesManager
       value: 
       objectReference: {fileID: 1366731795}
@@ -13696,6 +14140,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39, type: 3}
+--- !u!114 &1836724480 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 16366850237367963, guid: 897a3ace060e35041acd3f4e94748366,
+    type: 3}
+  m_PrefabInstance: {fileID: 856839269}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947a6c304b882aa4dbdefbcdabc30fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1843792813 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
@@ -14250,6 +14706,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1976772011 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4807635984255611943, guid: f377a9c84b66d4448871d498b52608f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 979406749}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947a6c304b882aa4dbdefbcdabc30fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1995747730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14263,6 +14731,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14318,6 +14791,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 22
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -14377,6 +14855,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14434,6 +14917,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
       propertyPath: obstaclesManager
       value: 
       objectReference: {fileID: 1366731795}
@@ -14448,6 +14936,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 650570315}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2040026297 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3613862406929407045, guid: 345c41aedb2e4984ab0de633e55ad4cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 650570315}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947a6c304b882aa4dbdefbcdabc30fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2049281371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14544,6 +15044,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14599,6 +15104,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 4
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager
@@ -15018,6 +15528,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1366731799}
+        m_TargetAssemblyTypeName: SaveSystemManager, Assembly-CSharp
+        m_MethodName: SaveGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1366731792}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GoToMainMenu
@@ -15371,6 +15893,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1055831559}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2105451487 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4807635984255611943, guid: f377a9c84b66d4448871d498b52608f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1055831559}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947a6c304b882aa4dbdefbcdabc30fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2117360232
 GameObject:
   m_ObjectHideFlags: 0
@@ -15661,6 +16195,11 @@ PrefabInstance:
       propertyPath: _dataIndex
       value: 27
       objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15716,6 +16255,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile 27
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: spawningManager
+      value: 
+      objectReference: {fileID: 1366731795}
     - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: obstaclesManager

@@ -3,7 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class TimerManager : MonoBehaviour
+public class TimerManager : MonoBehaviour,ISaveable
 {
     [SerializeField] ScoreManager scoreManager;
 
@@ -77,5 +77,18 @@ public class TimerManager : MonoBehaviour
         {
             timerText.text = text;
         }
+    }
+
+    public void LoadData(GameData data)
+    {
+        _seconds = data.PlayerData.Seconds;
+        _minutes = data.PlayerData.Minutes;
+        UpdateTexts();
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.PlayerData.Seconds = _seconds;
+        data.PlayerData.Minutes = _minutes;
     }
 }

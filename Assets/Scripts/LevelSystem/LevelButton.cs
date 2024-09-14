@@ -36,6 +36,7 @@ public class LevelButton : MonoBehaviour
         Debug.Log(level.ScoreToUnlock);
         if (IsLocked) return;
 
+        PlayerPrefsManager.SetSaveState(false);
         levelSettings.SetCurrentLevel(level.Index);
         SceneManager.LoadScene("GameScene");
     }

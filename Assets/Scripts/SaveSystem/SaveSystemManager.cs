@@ -7,6 +7,7 @@ public class SaveSystemManager : MonoBehaviour
 {
 
     [SerializeField] private string fileName;
+    [SerializeField] private LoadSettings loadSettings;
 
     private GameData _gameData;
 
@@ -17,12 +18,18 @@ public class SaveSystemManager : MonoBehaviour
     {
         _saveables = FindAllSaveables();
         _dataHandler = new FileDataHandler(Application.persistentDataPath,fileName);
+
+        _gameData = new GameData();
+
+        if (loadSettings.LoadFromSave) 
+        {
+            LoadGame();
+            loadSettings.LoadFromSave = false;
+        } 
     }
 
     private void LoadGame() 
     {
-        //Check in playerPrefs if there is an availble save to load
-
         _gameData = _dataHandler.Load();
 
         if (_gameData == null) return;
@@ -32,7 +39,7 @@ public class SaveSystemManager : MonoBehaviour
             saveable.LoadData(_gameData);
         }
     }
-    private void SaveGame()
+    public void SaveGame()
     {
         foreach (var saveable in _saveables)
         {
@@ -40,6 +47,8 @@ public class SaveSystemManager : MonoBehaviour
         }
 
         _dataHandler.Save(_gameData);
+
+        PlayerPrefsManager.SetSaveState(true);
     }
 
 

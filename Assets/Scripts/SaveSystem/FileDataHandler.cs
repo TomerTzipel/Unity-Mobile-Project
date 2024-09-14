@@ -21,8 +21,6 @@ public class FileDataHandler
         string fullPath = Path.Combine(_dataDirPath, _dataFileName);
         GameData loadedData = null;
 
-        //probably a different if
-
         if (File.Exists(fullPath))
         {
             try
@@ -55,7 +53,7 @@ public class FileDataHandler
             Directory.CreateDirectory(_dataDirPath);
 
             string dataToStore = JsonUtility.ToJson(gameData,true);
-
+            Debug.Log(dataToStore);
             using (FileStream stream = new FileStream(fullPath, FileMode.Create))
             {
                 using (StreamWriter writer = new StreamWriter(stream))
