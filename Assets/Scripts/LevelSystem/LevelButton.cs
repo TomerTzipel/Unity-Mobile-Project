@@ -32,8 +32,6 @@ public class LevelButton : MonoBehaviour
 
     public void SetUpLevel()
     {
-        Debug.Log(PlayerPrefsManager.GetPlayerBestScore());
-        Debug.Log(level.ScoreToUnlock);
         if (IsLocked) return;
 
         PlayerPrefsManager.SetSaveState(false);

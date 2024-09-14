@@ -2,8 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour,ISaveable
 {
+    [SerializeField] private TileHandler[] tiles;
+
     [SerializeField] private MapSettings SO_MapSettings;
     [SerializeField] private TileHandler firstLastTile;
     [SerializeField] private ScoreManager scoreManager;
@@ -54,6 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        PlayerPrefsManager.SetSaveState(false);
         PauseGame();
         scoreManager.UpdateBestScore();
         uiManager.LoadGameOverScreen();
@@ -75,4 +78,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void LoadData(GameData data)
+    {
+        SO_MapSettings.LastTile = tiles[data.MapData.LastTileIndex];
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.MapData.LastTileIndex = SO_MapSettings.LastTile.DataIndex;
+    }
 }

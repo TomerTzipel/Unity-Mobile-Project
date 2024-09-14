@@ -72,7 +72,6 @@ public class PlayerCollision : MonoBehaviour,ISaveable
         {
             Lose();
         }
-       
     }
 
     private IEnumerator ActivateInvulnerability()
@@ -122,17 +121,18 @@ public class PlayerCollision : MonoBehaviour,ISaveable
 
     private void Lose()
     {
-        //gameManager.GameOver();
+        gameManager.GameOver();
     }
 
     public void LoadData(GameData data)
     {
         transform.position = new Vector3(data.PlayerData.PositionX, 0.2f, 0f);
          _hp = data.PlayerData.Hp;
+        hpVisualManager.UpdateHpVisual(_hp);
     }
     public void SaveData(ref GameData data)
     {
-       data.PlayerData.PositionX = transform.position.x;
+        data.PlayerData.PositionX = transform.position.x;
         data.PlayerData.Hp = _hp;
     }
 }

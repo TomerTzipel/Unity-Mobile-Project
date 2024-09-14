@@ -6,14 +6,29 @@ public class TileHandler : MonoBehaviour, ISaveable
 {
 
     [SerializeField] private int _dataIndex;
-
+    [SerializeField] private LoadSettings _loadSettings;
     [SerializeField] SpawningManager _spawningManager;
 
     private Obstacle _leftObstacle;
     private Obstacle _midObstacle;
     private Obstacle _rightObstacle;
 
+    [SerializeField] private ObstacleType _leftStartingObstacleType;
+    [SerializeField] private ObstacleType _midStartingObstacleType;
+    [SerializeField] private ObstacleType _rightStartingObstacleType;
+
     private PowerUp _powerUp;
+
+    public int DataIndex {  get { return _dataIndex; } }
+
+    private void Awake()
+    {
+        if (!_loadSettings.LoadFromSave)
+        {
+            _spawningManager.LoadObstaclesToTile(_leftStartingObstacleType, _midStartingObstacleType, _rightStartingObstacleType, this);
+        }
+        
+    }
 
     public void ReleaseToPools()
     {
@@ -92,8 +107,8 @@ public class TileHandler : MonoBehaviour, ISaveable
         if(_powerUp != null)
         {
             tileData.PowerUpType = _powerUp.Type;
-            tileData.PowerUpX = _powerUp.transform.position.x;
-            tileData.PowerUpY = _powerUp.transform.position.y;
+            tileData.PowerUpX = _powerUp.transform.localPosition.x;
+            tileData.PowerUpY = _powerUp.transform.localPosition.y;
         }
 
         data.MapData.TilesData[_dataIndex] = tileData;

@@ -9,6 +9,7 @@ public class MapData
 
     public int ObstaclesCounter;
     public int PowerUpCounter;
+    public int LastTileIndex;
 
     public MapData()
     {
@@ -19,6 +20,7 @@ public class MapData
         }
         ObstaclesCounter = 0;
         PowerUpCounter = 0;
+        LastTileIndex = 30;
     }
 
 }
