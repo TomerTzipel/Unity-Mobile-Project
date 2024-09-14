@@ -26,10 +26,5 @@ public class PowerUp : MonoBehaviour
             powerUpSettings.CurrentPowerUp = type;
             _manager.ReturnPowerUpToPool(this);
         }
-
-        if (other.CompareTag("ObstacleRemover"))
-        {
-            _manager.ReturnPowerUpToPool(this);
-        }
     }
 }

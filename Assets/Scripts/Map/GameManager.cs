@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private MapSettings SO_MapSettings;
-    [SerializeField] private GameObject firstLastTile;
+    [SerializeField] private TileHandler firstLastTile;
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private UIManager uiManager;
     [SerializeField] private PlayerSwipeMovement playerSwipe;
@@ -13,11 +13,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TimerManager TimerManager;
     [SerializeField] private AudioListener audioListener;
 
-    public GameObject FirstLastTile
+    public TileHandler FirstLastTile
     {
         get { return firstLastTile; }
     }
-    public GameObject LastTile
+    public TileHandler LastTile
     {
         get { return SO_MapSettings.LastTile; }
     }

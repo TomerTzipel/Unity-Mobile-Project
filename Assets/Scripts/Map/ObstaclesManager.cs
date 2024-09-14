@@ -16,7 +16,7 @@ public class ObstaclesManager : MonoBehaviour
 
     private ObjectPool<GameObject> _obstaclesPool;
 
-    private GameObject LastTile
+    private TileHandler LastTile
     {
         get { return gameManager.LastTile; }
     }

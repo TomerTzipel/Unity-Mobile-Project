@@ -51,7 +51,7 @@ public class SpawningManager : MonoBehaviour
         _powerUpPools.Add(PowerUpType.Shield, new GameObjectPool<PowerUp>(shieldPrefab));
     }
 
-    private GameObject LastTile
+    private TileHandler LastTile
     {
         get { return gameManager.LastTile; }
     }
@@ -84,13 +84,13 @@ public class SpawningManager : MonoBehaviour
         ObstacleType chosenTypeLeft, chosenTypeMid, chosenTypeRight;
         ChooseObstacles(out chosenTypeLeft, out chosenTypeMid, out chosenTypeRight);
 
-        Obstacle obstacleLeft = GetObstacleByType(chosenTypeLeft);
-        Obstacle obstacleMid = GetObstacleByType(chosenTypeMid);
-        Obstacle obstacleRight = GetObstacleByType(chosenTypeRight);
+        Obstacle leftObstacle = GetObstacleByType(chosenTypeLeft);
+        Obstacle midObstacle = GetObstacleByType(chosenTypeMid);
+        Obstacle rightObstacle = GetObstacleByType(chosenTypeRight);
 
-        if (obstacleLeft != null) PlaceObstacle(obstacleLeft, Lane.Left);
-        if (obstacleMid != null) PlaceObstacle(obstacleMid, Lane.Mid);
-        if (obstacleRight != null) PlaceObstacle(obstacleRight, Lane.Right);
+        if (leftObstacle != null) PlaceObstacle(leftObstacle, Lane.Left, LastTile);
+        if (midObstacle != null) PlaceObstacle(midObstacle, Lane.Mid, LastTile);
+        if (rightObstacle != null) PlaceObstacle(rightObstacle, Lane.Right, LastTile);
 
         _powerUpSpawnCounter++;
 
@@ -135,13 +135,13 @@ public class SpawningManager : MonoBehaviour
         switch (chosenLane)
         {
             case Lane.Left:
-                PlacePowerUp(typeToSpawn, obstacleTypeLeft, chosenLane);
+                PlacePowerUp(typeToSpawn, obstacleTypeLeft, chosenLane, LastTile);
                 break;
             case Lane.Mid:
-                PlacePowerUp(typeToSpawn, obstacleTypeMid, chosenLane);
+                PlacePowerUp(typeToSpawn, obstacleTypeMid, chosenLane, LastTile);
                 break;
             case Lane.Right:
-                PlacePowerUp(typeToSpawn, obstacleTypeRight, chosenLane);
+                PlacePowerUp(typeToSpawn, obstacleTypeRight, chosenLane, LastTile);
                 break;
         }
 
@@ -154,7 +154,7 @@ public class SpawningManager : MonoBehaviour
         return true;
     }
 
-    private void PlacePowerUp(PowerUpType type,ObstacleType obstacleType, Lane lane)
+    private void PlacePowerUp(PowerUpType type,ObstacleType obstacleType, Lane lane, TileHandler tile)
     {
         PowerUp powerUp = _powerUpPools[type].GetItem();
         powerUp.Manager = this;
@@ -203,7 +203,8 @@ public class SpawningManager : MonoBehaviour
                 break;
         }
 
-        powerUp.transform.parent = LastTile.transform;
+        tile.AddPowerUp(powerUp);
+        powerUp.transform.parent = tile.transform;
         powerUp.transform.localPosition = new Vector3(powerUpX, powerUpY, 0f);
         powerUp.gameObject.SetActive(true);
     }
@@ -212,11 +213,10 @@ public class SpawningManager : MonoBehaviour
     {
         if (type == ObstacleType.Open) return null;
         Obstacle obstacle = _obstaclePools[type].GetItem();
-        obstacle.Manager = this;
         return obstacle;
     }
 
-    private void PlaceObstacle(Obstacle obstacle,Lane lane)
+    private void PlaceObstacle(Obstacle obstacle,Lane lane, TileHandler tile)
     {
         float obstacleX = 0f;
         switch (lane)
@@ -249,7 +249,8 @@ public class SpawningManager : MonoBehaviour
                 break;
         }
 
-        obstacle.transform.parent = LastTile.transform;
+        tile.AddObstacle(obstacle, lane);
+        obstacle.transform.parent = tile.transform;
         obstacle.transform.localPosition = new Vector3(obstacleX, obstacleY, 0f);
         obstacle.gameObject.SetActive(true);
     }
@@ -304,4 +305,26 @@ public class SpawningManager : MonoBehaviour
     {
         return _obstaclePools[type].GetItem();
     }
+
+    public void LoadPowerUpToTile(PowerUpType type, float powerUpX, float powerUpY,TileHandler tile)
+    {
+        PowerUp powerUp = _powerUpPools[type].GetItem();
+
+        tile.AddPowerUp(powerUp);
+        powerUp.transform.parent = tile.transform;
+        powerUp.transform.localPosition = new Vector3(powerUpX, powerUpY, 0f);
+
+        powerUp.gameObject.SetActive(true);
+    }
+    public void LoadObstaclesToTile(ObstacleType leftObstacleType, ObstacleType midObstacleType, ObstacleType rightObstacleType, TileHandler tile)
+    {
+        Obstacle leftObstacle = GetObstacleByType(leftObstacleType);
+        Obstacle midObstacle = GetObstacleByType(midObstacleType);
+        Obstacle rightObstacle = GetObstacleByType(rightObstacleType);
+
+        if (leftObstacle != null) PlaceObstacle(leftObstacle, Lane.Left, tile);
+        if (midObstacle != null) PlaceObstacle(midObstacle, Lane.Mid, tile);
+        if (rightObstacle != null) PlaceObstacle(rightObstacle, Lane.Right, tile);
+    }
+
 }

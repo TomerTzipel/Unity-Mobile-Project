@@ -346,6 +346,8 @@ GameObject:
   - component: {fileID: 2404716858790119673}
   - component: {fileID: 569662654487646114}
   - component: {fileID: 6424134699221582949}
+  - component: {fileID: 1721283186859683207}
+  - component: {fileID: 9100001800446785969}
   m_Layer: 0
   m_Name: FloorTile
   m_TagString: Ground
@@ -361,7 +363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7988907425071246760}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 12, y: 1, z: 12}
   m_ConstrainProportionsScale: 0
@@ -484,3 +486,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SO_MapSettings: {fileID: 11400000, guid: 5ceeefb8494189c408d50d78830977b1, type: 2}
   rb: {fileID: 569662654487646114}
+--- !u!114 &1721283186859683207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988907425071246760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9625102be6957b4bab529300397d5cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9100001800446785969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7988907425071246760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be8dc4050dadf9c43b0deea95267a222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileHandler: {fileID: 1721283186859683207}
+  SO_MapSettings: {fileID: 11400000, guid: 5ceeefb8494189c408d50d78830977b1, type: 2}
+  obstaclesManager: {fileID: 0}

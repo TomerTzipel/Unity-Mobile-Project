@@ -10,7 +10,7 @@ public class MapSettings : ScriptableObject
     [SerializeField] private float tilesSpeed;
     [SerializeField] private LevelSettings levelSettings;
 
-    public GameObject LastTile { get; set; }
+    public TileHandler LastTile { get; set; }
 
     private float moveSpeedOffset
     {

@@ -10,17 +10,6 @@ public enum ObstacleType
 public class Obstacle : MonoBehaviour
 {
     [SerializeField] private ObstacleType type;
-    [SerializeField] private SpawningManager _manager;
-    public SpawningManager Manager { get { return _manager; } set { _manager = value; } }
-
     public ObstacleType Type { get { return type; } }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("ObstacleRemover"))
-        {
-            _manager.ReturnObstacleToPool(this);
-        }
-    }
 }
 

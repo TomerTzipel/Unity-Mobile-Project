@@ -128,8 +128,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1959019330}
+    m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -183,8 +188,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: MoveRightObstacleFloorTile
+      value: FloorTile 8
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -594,6 +604,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -647,8 +662,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (20)
+      value: FloorTile 6
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -884,6 +904,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -937,8 +962,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (28)
+      value: FloorTile 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1980,6 +2010,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2033,8 +2068,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (14)
+      value: FloorTile 9
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2198,6 +2238,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2251,8 +2296,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (25)
+      value: FloorTile 18
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3009,6 +3059,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3062,8 +3117,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (26)
+      value: FloorTile 3
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3411,12 +3471,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 345c41aedb2e4984ab0de633e55ad4cf, type: 3}
---- !u!1 &567151129 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
-    type: 3}
-  m_PrefabInstance: {fileID: 1766816196}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &577224740
 GameObject:
   m_ObjectHideFlags: 0
@@ -3763,8 +3817,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile
+      value: FloorTile 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3778,6 +3837,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3831,8 +3895,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (3)
+      value: FloorTile 29
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3980,6 +4049,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4033,8 +4107,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (12)
+      value: FloorTile 10
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4828,8 +4907,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1959019330}
+    m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4883,8 +4967,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: SlideObstacleFloorTile
+      value: FloorTile 20
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -5379,6 +5468,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5432,8 +5526,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (18)
+      value: FloorTile 7
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5748,10 +5847,9 @@ GameObject:
   m_Component:
   - component: {fileID: 838128791}
   - component: {fileID: 838128788}
-  - component: {fileID: 838128792}
   m_Layer: 0
   m_Name: FloorRemover
-  m_TagString: Untagged
+  m_TagString: FloorRemover
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5793,20 +5891,6 @@ Transform:
   - {fileID: 486684102}
   m_Father: {fileID: 1959019330}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &838128792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 838128787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be8dc4050dadf9c43b0deea95267a222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SO_MapSettings: {fileID: 11400000, guid: 5ceeefb8494189c408d50d78830977b1, type: 2}
-  obstaclesManager: {fileID: 1366731795}
 --- !u!1 &838309434
 GameObject:
   m_ObjectHideFlags: 0
@@ -5957,8 +6041,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1959019330}
+    m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6012,8 +6101,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: CrouchJumpObstacleFloorTile
+      value: FloorTile 24
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -6641,6 +6735,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6694,8 +6793,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (11)
+      value: FloorTile 25
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6709,6 +6813,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6762,8 +6871,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (22)
+      value: FloorTile 5
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8340,6 +8454,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8393,8 +8512,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (23)
+      value: FloorTile 19
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8414,6 +8538,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8467,8 +8596,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (10)
+      value: FloorTile 11
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8480,8 +8614,13 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1959019330}
+    m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8535,8 +8674,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: JumpObstacleFloorTile
+      value: FloorTile 16
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -8675,6 +8819,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8728,8 +8877,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (2)
+      value: FloorTile 15
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9858,7 +10012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SO_MapSettings: {fileID: 11400000, guid: 5ceeefb8494189c408d50d78830977b1, type: 2}
-  firstLastTile: {fileID: 567151129}
+  firstLastTile: {fileID: 1766816197}
   scoreManager: {fileID: 1366731796}
   uiManager: {fileID: 1366731797}
   playerSwipe: {fileID: 1370261632}
@@ -10251,32 +10405,37 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1502026347}
   - {fileID: 1216815748}
   - {fileID: 237487030}
   - {fileID: 855593975}
-  - {fileID: 375781336}
   - {fileID: 1531037867}
-  - {fileID: 1714098899}
-  - {fileID: 1589505149}
+  - {fileID: 309404000}
   - {fileID: 540088686}
   - {fileID: 966589577}
-  - {fileID: 1342383009}
   - {fileID: 167225099}
+  - {fileID: 1311611950}
+  - {fileID: 1247490245}
+  - {fileID: 1705391570}
+  - {fileID: 76131411}
+  - {fileID: 887911599}
+  - {fileID: 1003691516}
+  - {fileID: 248177277}
+  - {fileID: 25422374}
+  - {fileID: 1843792813}
+  - {fileID: 375781336}
+  - {fileID: 1714098899}
+  - {fileID: 1589505149}
+  - {fileID: 1111725721}
+  - {fileID: 1342383009}
   - {fileID: 1913432835}
   - {fileID: 1543386952}
-  - {fileID: 1247490245}
-  - {fileID: 309404000}
-  - {fileID: 1705391570}
+  - {fileID: 315219200}
   - {fileID: 1946729396}
-  - {fileID: 76131411}
   - {fileID: 1537365398}
   - {fileID: 535152010}
-  - {fileID: 1003691516}
   - {fileID: 1152805264}
-  - {fileID: 248177277}
   - {fileID: 1355704244}
-  - {fileID: 25422374}
+  - {fileID: 1502026347}
   m_Father: {fileID: 1959019330}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1382521158
@@ -10610,6 +10769,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10663,8 +10827,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (1)
+      value: FloorTile 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11043,6 +11212,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11096,8 +11270,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (6)
+      value: FloorTile 13
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11111,6 +11290,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11164,8 +11348,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (5)
+      value: FloorTile 28
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11324,6 +11513,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11377,8 +11571,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (4)
+      value: FloorTile 14
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11845,12 +12044,17 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1959019330}
+    m_TransformParent: {fileID: 1381132842}
     m_Modifications:
     - target: {fileID: 569662654487646114, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
@@ -11905,8 +12109,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: MoveLeftObstacleFloorTile
+      value: FloorTile12
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -12800,6 +13009,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12853,8 +13067,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (29)
+      value: FloorTile 17
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12868,6 +13087,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12921,8 +13145,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (15)
+      value: FloorTile 23
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13011,6 +13240,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13064,13 +13298,30 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: Last Floor Tile
+      value: FloorTile 30
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39, type: 3}
+--- !u!114 &1766816197 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+    type: 3}
+  m_PrefabInstance: {fileID: 1766816196}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9625102be6957b4bab529300397d5cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1776080171
 GameObject:
   m_ObjectHideFlags: 0
@@ -13375,6 +13626,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 26
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13428,8 +13684,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (9)
+      value: FloorTile 26
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13719,15 +13980,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 315219200}
-  - {fileID: 887911599}
-  - {fileID: 1311611950}
-  - {fileID: 1843792813}
-  - {fileID: 1111725721}
-  - {fileID: 838128791}
-  - {fileID: 2135836576}
-  - {fileID: 1263172892}
   - {fileID: 156804306}
+  - {fileID: 1263172892}
+  - {fileID: 2135836576}
+  - {fileID: 838128791}
   - {fileID: 1381132842}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14002,6 +14258,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 22
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14055,8 +14316,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (17)
+      value: FloorTile 22
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14106,6 +14372,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14159,8 +14430,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (19)
+      value: FloorTile 21
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14263,6 +14539,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14316,8 +14597,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (13)
+      value: FloorTile 4
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15370,6 +15656,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1381132842}
     m_Modifications:
+    - target: {fileID: 1721283186859683207, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: _dataIndex
+      value: 27
+      objectReference: {fileID: 0}
     - target: {fileID: 5898653236372209258, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15423,8 +15714,13 @@ PrefabInstance:
     - target: {fileID: 7988907425071246760, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
         type: 3}
       propertyPath: m_Name
-      value: FloorTile (7)
+      value: FloorTile 27
       objectReference: {fileID: 0}
+    - target: {fileID: 9100001800446785969, guid: 90fbdeabc2ae6e44ea49dc702ea8bc39,
+        type: 3}
+      propertyPath: obstaclesManager
+      value: 
+      objectReference: {fileID: 1366731795}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
