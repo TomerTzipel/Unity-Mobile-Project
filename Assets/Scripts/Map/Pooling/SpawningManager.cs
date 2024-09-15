@@ -156,6 +156,7 @@ public class SpawningManager : MonoBehaviour,ISaveable
     private void PlacePowerUp(PowerUpType type,ObstacleType obstacleType, Lane lane, TileHandler tile)
     {
         PowerUp powerUp = _powerUpPools[type].GetItem();
+        powerUp.WasCollected = false;
         powerUp.Manager = this;
 
         float powerUpX = 0f;
@@ -308,6 +309,7 @@ public class SpawningManager : MonoBehaviour,ISaveable
     public void LoadPowerUpToTile(PowerUpType type, float powerUpX, float powerUpY,TileHandler tile)
     {
         PowerUp powerUp = _powerUpPools[type].GetItem();
+        powerUp.WasCollected = false;
 
         tile.AddPowerUp(powerUp);
         powerUp.transform.parent = tile.transform;

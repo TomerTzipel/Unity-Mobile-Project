@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour,ISaveable
             playerSwipe.enabled = false;
         }
 
-        if (PlayerPrefs.GetString(PlayerPrefsManager.GetSoundMode()) == PlayerPrefsManager.soundOnValue)
+        if (PlayerPrefsManager.GetSoundMode() == PlayerPrefsManager.soundOnValue)
         {
             audioListener.enabled = true;
         }
@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour,ISaveable
 
     public void GameOver()
     {
+        TimerManager.RecordTime();
         PlayerPrefsManager.SetSaveState(false);
         PauseGame();
         scoreManager.UpdateBestScore();

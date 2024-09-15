@@ -22,10 +22,10 @@ public static class PlayerPrefsManager
 
     public static void InitializePlayerPrefs()
     {
-        if (!PlayerPrefs.HasKey(controlModeKey))
+        if (!PlayerPrefs.HasKey(isSaveAvailable))
         {
             PlayerPrefs.SetString(controlModeKey, controlModeTouchValue);
-            PlayerPrefs.SetString(soundModeKey, soundOnValue);
+            PlayerPrefs.SetString(soundModeKey, soundOffValue);
             PlayerPrefs.SetInt(bestScoreKey, 0);
             PlayerPrefs.SetInt(coinsKey, 0);
             PlayerPrefs.SetInt(isSaveAvailable, 0);

@@ -21,3 +21,4 @@ MonoBehaviour:
   obstacleDifficulityMin: 3
   obstacleSpawnRate: 6
   powerUpSpawnRate: 6
+  skyColor: {r: 0.8784314, g: 0.8352941, b: 0.32941177, a: 1}

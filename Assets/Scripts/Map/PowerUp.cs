@@ -15,6 +15,8 @@ public class PowerUp : MonoBehaviour
     [SerializeField] private PowerUpType type;
 
     [SerializeField] private SpawningManager _manager;
+
+    public bool WasCollected { get; set; } = false;
     public SpawningManager Manager { get { return _manager; } set { _manager = value; } }
 
     public PowerUpType Type { get { return type; } }
@@ -24,7 +26,9 @@ public class PowerUp : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             powerUpSettings.CurrentPowerUp = type;
+            WasCollected = true;
             _manager.ReturnPowerUpToPool(this);
         }
     }
+
 }

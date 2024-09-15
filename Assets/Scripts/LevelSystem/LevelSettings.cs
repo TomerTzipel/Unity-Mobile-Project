@@ -6,6 +6,7 @@ using UnityEngine;
 public class LevelSettings : ScriptableObject
 {
     [SerializeField] private Level[] levels;
+    [SerializeField] private Material skyBox;
     public Level CurrentLevel { get; private set; } 
 
     public int NumberOfLevels
@@ -23,6 +24,7 @@ public class LevelSettings : ScriptableObject
         if (index >= levels.Length) { return; }
 
         CurrentLevel = levels[index];
+        skyBox.SetColor("_Tint", CurrentLevel.SkyColor);
     }
 
     public void NextLevel()

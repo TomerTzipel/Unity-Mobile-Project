@@ -52,7 +52,7 @@ public class TileHandler : MonoBehaviour, ISaveable
 
         if (_powerUp != null) 
         {
-            _spawningManager.ReturnPowerUpToPool(_powerUp); 
+            if(!_powerUp.WasCollected) _spawningManager.ReturnPowerUpToPool(_powerUp);
             _powerUp = null;
         }
     }

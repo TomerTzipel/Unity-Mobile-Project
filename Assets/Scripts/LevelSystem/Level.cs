@@ -16,7 +16,8 @@ public class Level : ScriptableObject
 
     [SerializeField] private int obstacleSpawnRate;
     [SerializeField] private int powerUpSpawnRate;
-    
+
+    [SerializeField] private Color skyColor;
     public int Index { get { return index; } }
     public int ScoreToUnlock { get { return scoreToUnlock; } }
     public int ScoreToFinish { get { return scoreToFinish; } }
@@ -26,4 +27,6 @@ public class Level : ScriptableObject
     public int ObstacleDifficulityMin { get { return obstacleDifficulityMin; } }
     public int ObstacleSpawnRate { get { return obstacleSpawnRate; } }
     public int PowerUpSpawnRate { get { return powerUpSpawnRate; } }
+
+    public Color SkyColor { get { return skyColor; } }
 }

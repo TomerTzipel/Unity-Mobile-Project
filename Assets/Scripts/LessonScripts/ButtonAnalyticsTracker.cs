@@ -1,8 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Analytics; // Unity Analytics namespace
-using System.Collections.Generic;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
 using Unity.Services.Core.Environments; // Required for Dictionary

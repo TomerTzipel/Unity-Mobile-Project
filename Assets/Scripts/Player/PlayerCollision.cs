@@ -47,13 +47,15 @@ public class PlayerCollision : MonoBehaviour,ISaveable
 
         if (other.CompareTag("PowerUp"))
         {
+            AnalyticsManager.RecordPowerUpAnalytic(powerUpSettings.CurrentPowerUp);
             switch (powerUpSettings.CurrentPowerUp)
             {
                 case PowerUpType.Heal:
                     ActivateHeal();
                     break;
                 case PowerUpType.Invulnerability:
-                    StartCoroutine(ActivateInvulnerability());
+                    ActivateInvulnerabilityVisual();
+                    StartCoroutine(ActivateInvulnerability(invulnerabilityDuration));
                     break;
                 case PowerUpType.Shield:
                     ActivateShield();
@@ -72,13 +74,14 @@ public class PlayerCollision : MonoBehaviour,ISaveable
         {
             Lose();
         }
+        StartCoroutine(ActivateInvulnerability(0.5f));
     }
 
-    private IEnumerator ActivateInvulnerability()
+    private IEnumerator ActivateInvulnerability(float duration)
     {
         _isInvulnerable = true;
-        ActivateInvulnerabilityVisual();
-        yield return new WaitForSeconds(invulnerabilityDuration);
+       
+        yield return new WaitForSeconds(duration);
         DeactivateInvulnerabilityVisual();
         _isInvulnerable = false;
     }

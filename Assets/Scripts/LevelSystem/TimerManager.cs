@@ -91,4 +91,9 @@ public class TimerManager : MonoBehaviour,ISaveable
         data.PlayerData.Seconds = _seconds;
         data.PlayerData.Minutes = _minutes;
     }
+
+    public void RecordTime()
+    {
+        AnalyticsManager.RecordRunTimeAnaytic(_minutes, _seconds);
+    }
 }
