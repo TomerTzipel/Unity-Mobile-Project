@@ -1,8 +1,6 @@
-
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
-using static UnityEditor.Progress;
 
 public class GameObjectPool<T>
     where T : MonoBehaviour

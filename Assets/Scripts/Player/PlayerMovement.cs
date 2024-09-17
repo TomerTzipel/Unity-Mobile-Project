@@ -59,10 +59,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
         if (SO_playerMovementSettings.MoveInputDetected)
         {
-            Move();
+            Move();  
         }
     }
 

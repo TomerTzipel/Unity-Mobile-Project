@@ -6,6 +6,9 @@ using System.Collections;
 
 public class MainMenuManager : MonoBehaviour
 {
+    [SerializeField] TMP_Text bestScorePortrait;
+    [SerializeField] TMP_Text bestScoreLandscape;
+
     [SerializeField] Button controlModeButtonPortrait;
     [SerializeField] Button muteButtonPortrait; 
     [SerializeField] Button controlModeButtonLandscape;
@@ -13,16 +16,6 @@ public class MainMenuManager : MonoBehaviour
 
     [SerializeField] Sprite offMode;
     [SerializeField] Sprite onMode;
-
-    [SerializeField] AudioSource sfxClick;
-    [SerializeField] AudioSource sfxSuccess;
-    [SerializeField] AudioSource sfxFailure;
-
-    [SerializeField] TransitionUI TransitionUi;
-
-    [SerializeField] AudioListener audioListener;
-
-    public float sceneLoadTime;
 
     void Awake()
     {
@@ -32,6 +25,10 @@ public class MainMenuManager : MonoBehaviour
 
     void UpdateUI()
     {
+        string text = $"Best Score: {PlayerPrefsManager.GetPlayerBestScore()}";
+        bestScorePortrait.text = text ;
+        bestScoreLandscape.text = text ;
+
         if (PlayerPrefsManager.GetControlMode() == PlayerPrefsManager.controlModeTouchValue)
         {
             controlModeButtonPortrait.image.sprite = onMode;
@@ -47,11 +44,11 @@ public class MainMenuManager : MonoBehaviour
         {
             muteButtonPortrait.image.sprite = offMode;
             muteButtonLandscape.image.sprite = offMode;
-            audioListener.enabled = true;
+            AudioListener.volume = 1.0f;
         }
         else
         {
-            audioListener.enabled = false;
+            AudioListener.volume = 0f;
             muteButtonPortrait.image.sprite = onMode;
             muteButtonLandscape.image.sprite = onMode;
         }
@@ -75,55 +72,20 @@ public class MainMenuManager : MonoBehaviour
     {
         if (PlayerPrefsManager.GetSoundMode() == PlayerPrefsManager.soundOnValue)
         {
-            audioListener.enabled = false;
+            AudioListener.volume = 0f;
             PlayerPrefsManager.SetSoundMode(PlayerPrefsManager.soundOffValue);
         }
         else
         {
-            audioListener.enabled = true;
+            AudioListener.volume = 1.0f;
             PlayerPrefsManager.SetSoundMode(PlayerPrefsManager.soundOnValue);
         }
 
         UpdateUI();
     }
 
-    public void StartGame(GameObject buttonPressed)
-    {
-        string levelName = buttonPressed.name;
-
-        if (LevelData.levelThresholds.ContainsKey(levelName))
-        {
-            int levelScoreThreshold = LevelData.levelThresholds[levelName];
-
-            if (PlayerPrefsManager.GetPlayerBestScore() >= levelScoreThreshold)
-            {
-                StaticData.checkPointScoreValueToKeep = levelScoreThreshold;
-
-                TransitionUi.TransitionStart();
-
-                StartCoroutine(LoadSceneAfterDelay("GameScene", sceneLoadTime));
-
-                sfxSuccess.Play();
-            }
-            else
-            {
-                sfxFailure.Play();
-            }
-        }
-        else
-        {
-            sfxFailure.Play();
-        }
-    }
-
     public void QuitGame()
     {
         Application.Quit();
-    }
-
-    private IEnumerator LoadSceneAfterDelay(string sceneName, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene(sceneName);
     }
 }

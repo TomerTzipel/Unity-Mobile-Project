@@ -4,12 +4,16 @@ using UnityEngine.UI;
 
 public class LevelButton : MonoBehaviour
 {
-    private static Color lockedColor = new Color32(255, 113, 107, 255);
-    private static Color unlockedColor = new Color32(107, 255, 226, 255);
+    [SerializeField] private Sprite unlockedSprite;
+    [SerializeField] private Sprite lockedSprite;
+    [SerializeField] private Image image;
 
     [SerializeField] private Button button;
     [SerializeField] private LevelSettings levelSettings;
     [SerializeField] private Level level;
+
+    [SerializeField] private AudioSource clickSFX;
+    [SerializeField] private AudioSource errorSFX;
 
     private bool IsLocked
     {
@@ -18,22 +22,26 @@ public class LevelButton : MonoBehaviour
 
     private void Awake()
     {
-        ColorBlock cb = button.colors;
+
         if (IsLocked)
         {
-            cb.normalColor = lockedColor;
+            image.sprite = lockedSprite;
         }
         else
         {
-            cb.normalColor = unlockedColor;
+            image.sprite = unlockedSprite;
         }
-        button.colors = cb;
     }
 
     public void SetUpLevel()
     {
-        if (IsLocked) return;
+        if (IsLocked)
+        {
+            errorSFX.Play();
+            return;
+        }
 
+        clickSFX.Play();
         AnalyticsManager.RecordLevelEntryAnalytic(level.Index + 1);
         PlayerPrefsManager.SetSaveState(false);
         levelSettings.SetCurrentLevel(level.Index);

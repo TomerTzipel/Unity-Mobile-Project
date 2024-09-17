@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Level 4
   m_EditorClassIdentifier: 
   index: 3
-  scoreToUnlock: 1800
-  scoreToFinish: 3000
+  scoreToUnlock: 450
+  scoreToFinish: 650
   scoreMultiplier: 1.5
   speedMultiplier: 1.25
   obstacleDifficulityMax: 3
   obstacleDifficulityMin: 2
   obstacleSpawnRate: 6
   powerUpSpawnRate: 7
-  skyColor: {r: 0, g: 0, b: 0, a: 0}
+  skyColor: {r: 0.8392157, g: 0.16862746, b: 0.20392157, a: 1}

@@ -1,20 +1,22 @@
+using System;
 using UnityEngine;
 
 public static class PlayerPrefsManager
 {
-    private const string controlModeKey = "ControlMode";
-    private const string soundModeKey = "SoundMode";
+    //Data
+    private const string playerPrefsIntializedKey = "FirstExecution";
     private const string bestScoreKey = "BestScore";
-    public const string lastLoginTimeKey = "LastLoginTime";
-    public const string currentDayKey = "CurrentDay";
-
     public const string isSaveAvailable = "SaveState";
 
+    //Dailies
     public const string coinsKey = "Coins";
+    private const string claimedKeyPrefix = "DayClaimed_"; 
+    public const string firstLoginTimeKey = "LastLoginTime";
+    public const string currentDayKey = "CurrentDay";
 
-    private const string claimedKeyPrefix = "DayClaimed_";
-
-
+    //Settings
+    private const string controlModeKey = "ControlMode";
+    private const string soundModeKey = "SoundMode";
     public const string controlModeTouchValue = "Touch";
     public const string controlModeButtonsValue = "Buttons";
     public const string soundOnValue = "On";
@@ -22,10 +24,16 @@ public static class PlayerPrefsManager
 
     public static void InitializePlayerPrefs()
     {
-        if (!PlayerPrefs.HasKey(isSaveAvailable))
+        //Will execute only on the first execution of the game
+        if (!PlayerPrefs.HasKey(playerPrefsIntializedKey))
         {
-            PlayerPrefs.SetString(controlModeKey, controlModeTouchValue);
-            PlayerPrefs.SetString(soundModeKey, soundOffValue);
+            PlayerPrefs.SetInt(playerPrefsIntializedKey, 1);
+
+            PlayerPrefs.SetString(firstLoginTimeKey, DateTime.Now.ToString());
+
+            PlayerPrefs.SetString(controlModeKey, controlModeButtonsValue);
+            PlayerPrefs.SetString(soundModeKey, soundOnValue);
+
             PlayerPrefs.SetInt(bestScoreKey, 0);
             PlayerPrefs.SetInt(coinsKey, 0);
             PlayerPrefs.SetInt(isSaveAvailable, 0);
@@ -77,10 +85,9 @@ public static class PlayerPrefsManager
     public static void AddToCoins(int amount)
     {
         int currentPlayerCoins = GetPlayerCoins();
-        Debug.Log(currentPlayerCoins);
         PlayerPrefs.SetInt(coinsKey, currentPlayerCoins + amount);
-        Debug.Log(GetPlayerCoins());
     }
+
     public static int GetPlayerBestScore()
     {
         return PlayerPrefs.GetInt(bestScoreKey,0);
@@ -92,37 +99,30 @@ public static class PlayerPrefsManager
         PlayerPrefs.Save();
     }
 
-    public static void SetLastLoginTime(System.DateTime time)
+    public static DateTime GetFirstLoginTime()
     {
-        PlayerPrefs.SetString(lastLoginTimeKey, time.ToString());
-        PlayerPrefs.Save();
-    }
-
-    public static System.DateTime GetLastLoginTime()
-    {
-        string timeString = PlayerPrefs.GetString(lastLoginTimeKey, System.DateTime.MinValue.ToString());
-        return System.DateTime.Parse(timeString);
-    }
-
-    public static void SetCurrentDay(int day)
-    {
-        PlayerPrefs.SetInt(currentDayKey, day);
-        PlayerPrefs.Save();
+        string timeString = PlayerPrefs.GetString(firstLoginTimeKey, DateTime.MinValue.ToString());
+        return DateTime.Parse(timeString);
     }
 
     public static int GetCurrentDay()
     {
         return PlayerPrefs.GetInt(currentDayKey, 1);
     }
+    public static void SetCurrentDay(int day)
+    {
+        PlayerPrefs.SetInt(currentDayKey, day);
+        PlayerPrefs.Save();
+    }
 
-    public static bool GetClaimedStatus(int day)
+    public static bool IsDayClaimed(int day)
     {
         return PlayerPrefs.GetInt(claimedKeyPrefix + day, 0) == 1;
     }
 
-    public static void SetClaimedStatus(int day, bool claimed)
+    public static void ClaimDay(int day)
     {
-        PlayerPrefs.SetInt(claimedKeyPrefix + day, claimed ? 1 : 0);
+        PlayerPrefs.SetInt(claimedKeyPrefix + day,1);
         PlayerPrefs.Save();
     }
 

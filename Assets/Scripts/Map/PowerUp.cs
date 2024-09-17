@@ -27,7 +27,15 @@ public class PowerUp : MonoBehaviour
         {
             powerUpSettings.CurrentPowerUp = type;
             WasCollected = true;
-            _manager.ReturnPowerUpToPool(this);
+            if(_manager != null)
+            {
+                _manager.ReturnPowerUpToPool(this);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            
         }
     }
 

@@ -32,6 +32,12 @@ public class TileHandler : MonoBehaviour, ISaveable
 
     public void ReleaseToPools()
     {
+        if(_spawningManager == null)
+        {
+            DestoryObstacles();
+            return;
+        }
+
         if (_leftObstacle != null) 
         {
             _spawningManager.ReturnObstacleToPool(_leftObstacle);
@@ -53,6 +59,32 @@ public class TileHandler : MonoBehaviour, ISaveable
         if (_powerUp != null) 
         {
             if(!_powerUp.WasCollected) _spawningManager.ReturnPowerUpToPool(_powerUp);
+            _powerUp = null;
+        }
+    }
+    private void DestoryObstacles()
+    {
+        if (_leftObstacle != null)
+        {
+            Destroy(_leftObstacle.gameObject);
+            _leftObstacle = null;
+        }
+
+        if (_midObstacle != null)
+        {
+            Destroy(_midObstacle.gameObject);
+            _midObstacle = null;
+        }
+
+        if (_rightObstacle != null)
+        {
+            Destroy(_rightObstacle.gameObject);
+            _rightObstacle = null;
+        }
+
+        if (_powerUp != null)
+        {
+            if (!_powerUp.WasCollected) Destroy(_powerUp.gameObject); ;
             _powerUp = null;
         }
     }

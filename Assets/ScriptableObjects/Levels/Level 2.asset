@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Level 2
   m_EditorClassIdentifier: 
   index: 1
-  scoreToUnlock: 400
-  scoreToFinish: 1000
+  scoreToUnlock: 150
+  scoreToFinish: 300
   scoreMultiplier: 1.15
   speedMultiplier: 1
   obstacleDifficulityMax: 3

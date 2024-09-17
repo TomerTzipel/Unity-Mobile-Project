@@ -26,10 +26,7 @@ public class ScoreManager : MonoBehaviour,ISaveable
     {
         _score = 0;
 
-        foreach (var text in bestScoreTexts) 
-        {
-            text.text = $"Best Score - {PlayerPrefsManager.GetPlayerBestScore()}";
-        }
+        UpdateBestScoreUI();
         UpdateLevelUI();
         UpdateUI();
     }
@@ -60,6 +57,7 @@ public class ScoreManager : MonoBehaviour,ISaveable
         {
             PlayerPrefsManager.SetPlayerBestScore( _score);
         }
+        UpdateBestScoreUI();
     }
 
     private void UpdateUI()
@@ -76,11 +74,18 @@ public class ScoreManager : MonoBehaviour,ISaveable
             text.text = $"Level {levelSettings.CurrentLevel.Index + 1}";
         }
     }
+    private void UpdateBestScoreUI()
+    {
+        foreach (var text in bestScoreTexts)
+        {
+            text.text = $"Best Score - {PlayerPrefsManager.GetPlayerBestScore()}";
+        }
+    }
 
     private void ChangeLevel()
     {
         levelSettings.NextLevel();
-        spawningManager.ResetPowerUpCounter();
+        spawningManager.ResetCounters();
         UpdateLevelUI();
     }
 

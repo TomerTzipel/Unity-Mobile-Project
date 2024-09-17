@@ -6,7 +6,7 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private PlayerMovementSettings SO_playerMovementSettings;
     [SerializeField] private AnimationHandler animationHandler;
     [SerializeField] private Rigidbody rb;
-
+    [SerializeField] private AudioSource jumpSFX;
 
     private void Update()
     {
@@ -25,6 +25,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (SO_playerMovementSettings.State == PlayerState.Airborne) return;
 
+        jumpSFX.Play();
         animationHandler.OnJumpInput();
         Vector3 JumpVelocity = SO_playerMovementSettings.JumpVelocity;
 

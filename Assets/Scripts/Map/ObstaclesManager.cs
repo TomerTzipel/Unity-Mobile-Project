@@ -7,6 +7,7 @@ using UnityEngine.Pool;
 
 public class ObstaclesManager : MonoBehaviour
 {
+    //The old system obstacle manager, for the updated one actually used go to spawningManager
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject obstaclePrefab;
     [SerializeField] private int obstacleSpawnRate;

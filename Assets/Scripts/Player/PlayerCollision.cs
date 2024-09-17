@@ -4,8 +4,10 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour,ISaveable
 {
     [SerializeField] private GameManager gameManager;
-    [SerializeField] private TimerManager scoreManager;
+    [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private PowerUpSettings powerUpSettings;
+
+    [SerializeField] private AudioSource damageSFX;
 
     [SerializeField] private GameObject shieldVisual;
 
@@ -16,13 +18,16 @@ public class PlayerCollision : MonoBehaviour,ISaveable
     [SerializeField] private HpVisualManager hpVisualManager;
     private int _hp;
     [SerializeField] private int MaxHp; 
-    [SerializeField] private int healValue;
-    
+    [SerializeField] private int healValue; 
+    [SerializeField] private AudioSource healSFX;
+
     private bool _isInvulnerable = false;
     [SerializeField] private float invulnerabilityDuration;
+    [SerializeField] private AudioSource starSFX;
 
     private bool _isShielded = false;
-
+    [SerializeField] private AudioSource shieldSFX;
+    [SerializeField] private AudioSource shieldBreakSFX;
     private void Awake()
     {
         shieldVisual.SetActive(false);
@@ -48,6 +53,8 @@ public class PlayerCollision : MonoBehaviour,ISaveable
         if (other.CompareTag("PowerUp"))
         {
             AnalyticsManager.RecordPowerUpAnalytic(powerUpSettings.CurrentPowerUp);
+
+            scoreManager.RewardPowerUp();
             switch (powerUpSettings.CurrentPowerUp)
             {
                 case PowerUpType.Heal:
@@ -55,6 +62,7 @@ public class PlayerCollision : MonoBehaviour,ISaveable
                     break;
                 case PowerUpType.Invulnerability:
                     ActivateInvulnerabilityVisual();
+                    starSFX.Play();
                     StartCoroutine(ActivateInvulnerability(invulnerabilityDuration));
                     break;
                 case PowerUpType.Shield:
@@ -67,7 +75,7 @@ public class PlayerCollision : MonoBehaviour,ISaveable
     private void TakeDamage()
     {
         _hp--;
-
+        damageSFX.Play();
         hpVisualManager.UpdateHpVisual(_hp);
 
         if (_hp <= 0)
@@ -80,7 +88,6 @@ public class PlayerCollision : MonoBehaviour,ISaveable
     private IEnumerator ActivateInvulnerability(float duration)
     {
         _isInvulnerable = true;
-       
         yield return new WaitForSeconds(duration);
         DeactivateInvulnerabilityVisual();
         _isInvulnerable = false;
@@ -102,6 +109,7 @@ public class PlayerCollision : MonoBehaviour,ISaveable
     }
     private void ActivateHeal()
     {
+        healSFX.Play();
         _hp += healValue;
         if (_hp > MaxHp) 
         {
@@ -112,14 +120,17 @@ public class PlayerCollision : MonoBehaviour,ISaveable
 
     private void ActivateShield()
     {
+        shieldSFX.Play();
         _isShielded = true;
         shieldVisual.SetActive(true);
     }
 
     private void RemoveShield()
     {
+        shieldBreakSFX.Play();
         _isShielded = false;
-        shieldVisual.SetActive(false);
+        shieldVisual.SetActive(false); 
+        StartCoroutine(ActivateInvulnerability(0.5f));
     }
 
     private void Lose()

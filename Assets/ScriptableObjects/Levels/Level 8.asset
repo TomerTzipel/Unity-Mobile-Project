@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Level 8
   m_EditorClassIdentifier: 
   index: 7
-  scoreToUnlock: 8250
-  scoreToFinish: 10500
+  scoreToUnlock: 1400
+  scoreToFinish: 1800
   scoreMultiplier: 1.9
   speedMultiplier: 1.5
   obstacleDifficulityMax: 2
   obstacleDifficulityMin: 1
   obstacleSpawnRate: 4
   powerUpSpawnRate: 9
+  skyColor: {r: 0.6039216, g: 0.8117647, b: 0.13725491, a: 1}

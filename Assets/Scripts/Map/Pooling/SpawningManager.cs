@@ -66,6 +66,7 @@ public class SpawningManager : MonoBehaviour,ISaveable
     public void CheckObstaclesSpawn()
     {
         _obstacleSpawnCounter++;
+        Debug.Log(_obstacleSpawnCounter);
         if (_obstacleSpawnCounter == ObstacleSpawnRate)
         {
             _obstacleSpawnCounter = 0;
@@ -73,8 +74,9 @@ public class SpawningManager : MonoBehaviour,ISaveable
         }
     }
 
-    public void ResetPowerUpCounter()
+    public void ResetCounters()
     {
+        _obstacleSpawnCounter = 0;
         _powerUpSpawnCounter = 0;
     }
 
@@ -157,6 +159,7 @@ public class SpawningManager : MonoBehaviour,ISaveable
     {
         PowerUp powerUp = _powerUpPools[type].GetItem();
         powerUp.WasCollected = false;
+       
         powerUp.Manager = this;
 
         float powerUpX = 0f;

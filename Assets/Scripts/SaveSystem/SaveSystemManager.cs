@@ -59,4 +59,9 @@ public class SaveSystemManager : MonoBehaviour
         return new List<ISaveable>(saveables);
     }
 
+    private void OnApplicationQuit()
+    {
+        SaveGame();
+    }
+
 }

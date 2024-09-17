@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   scoreToUnlock: 0
-  scoreToFinish: 400
+  scoreToFinish: 150
   scoreMultiplier: 1
   speedMultiplier: 1
   obstacleDifficulityMax: 4

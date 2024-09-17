@@ -8,6 +8,8 @@ public class ContinueButton : MonoBehaviour
 {
     private static Color lockedColor = new Color32(39, 33, 34, 255);
 
+    [SerializeField] private AudioSource failSFX; 
+    [SerializeField] private AudioSource clickSFX;
 
     [SerializeField] private LoadSettings loadSettings;
     [SerializeField] private Button button;
@@ -27,8 +29,13 @@ public class ContinueButton : MonoBehaviour
 
     public void OnClick()
     {
-        if (!PlayerPrefsManager.GetSaveState()) return;
+        if (!PlayerPrefsManager.GetSaveState())
+        {
+            failSFX.Play();
+            return;
+        }
 
+        clickSFX.Play();
         loadSettings.LoadFromSave = true;
         SceneManager.LoadScene("GameScene");
     }

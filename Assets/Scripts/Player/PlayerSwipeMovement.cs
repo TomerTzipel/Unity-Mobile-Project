@@ -99,12 +99,6 @@ public class PlayerSwipeMovement : MonoBehaviour
         if (Direction.x > 0) return;
 
         playerMovement.OnMoveRightInput();
-
-        if (Direction.x == 0)
-        {
-            playerMovement.OnMoveRightInput();
-        }
-
     }
 
     private void OnLeftInput()
@@ -112,11 +106,6 @@ public class PlayerSwipeMovement : MonoBehaviour
         if (Direction.x < 0) return;
 
         playerMovement.OnMoveLeftInput(); 
-        
-        if (Direction.x == 0)
-        {
-            playerMovement.OnMoveLeftInput();
-        }
     }
 
     private void OnJumpInput()
