@@ -37,7 +37,7 @@ public class DailyButton : MonoBehaviour
     public void OnClick()
     {
         int currentDay = PlayerPrefsManager.GetCurrentDay();
-        if (PlayerPrefsManager.IsDayClaimed(_day) || currentDay != _day)
+        if (PlayerPrefsManager.IsDayClaimed(_day) || currentDay < _day)
         {
             failSFX.Play();
             return;
