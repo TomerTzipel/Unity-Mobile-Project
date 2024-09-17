@@ -25,7 +25,7 @@ public class DailyButton : MonoBehaviour
         }
         int currentDay = PlayerPrefsManager.GetCurrentDay();
 
-        if (currentDay == _day)
+        if (currentDay >= _day)
         {
             CanClaimVisual(); 
             return;
