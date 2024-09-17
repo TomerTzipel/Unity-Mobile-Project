@@ -66,7 +66,6 @@ public class SpawningManager : MonoBehaviour,ISaveable
     public void CheckObstaclesSpawn()
     {
         _obstacleSpawnCounter++;
-        Debug.Log(_obstacleSpawnCounter);
         if (_obstacleSpawnCounter == ObstacleSpawnRate)
         {
             _obstacleSpawnCounter = 0;
