@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour,ISaveable
     [SerializeField] private PlayerSwipeMovement playerSwipe;
 
     [SerializeField] private TimerManager TimerManager;
-    [SerializeField] private AudioListener audioListener;
 
     public TileHandler FirstLastTile
     {
@@ -46,11 +45,11 @@ public class GameManager : MonoBehaviour,ISaveable
 
         if (PlayerPrefsManager.GetSoundMode() == PlayerPrefsManager.soundOnValue)
         {
-            audioListener.enabled = true;
+            AudioListener.volume = 1.0f;
         }
         else
         {
-            audioListener.enabled = false;
+            AudioListener.volume = 0f;
         }
     }
 
