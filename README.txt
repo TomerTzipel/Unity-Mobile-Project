@@ -9,3 +9,5 @@ Object Pooling/Dynamic UI - Tomer
 HW3:
 Character Profile Page - Yivgeni
 Obstacle Pooling/Survival Timer - Tomer
+
+HW4: daily reward - yivgeni 
